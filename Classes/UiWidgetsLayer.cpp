@@ -21,6 +21,7 @@ bool UiWidgetsLayer::init()
 	{
 		return false;
 	}
+    setTouchEnabled(true);
 	setContentSize(ccp(kLayerWidth, kLayerHeight));
 	ignoreAnchorPointForPosition(false);
 	auto winSize = CCDirector::sharedDirector()->getWinSize();
