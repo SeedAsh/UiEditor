@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="win32">
+      <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model">
+      <UniqueIdentifier>{51a7d40a-028b-4597-af82-1e43397e025b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views">
+      <UniqueIdentifier>{68660d17-a5a8-480c-a745-04e96c878b1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Widgets">
+      <UniqueIdentifier>{f09ea6a5-6227-496c-8e75-398b5334c138}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util">
+      <UniqueIdentifier>{50d566f2-2490-4618-ac9f-b3626ec99953}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MainScene.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UiLayer.cpp">
+      <Filter>Views</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UiWidgetLabel.cpp">
+      <Filter>Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UiWidgetNode.cpp">
+      <Filter>Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UiWidgetImage.cpp">
+      <Filter>Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UiWidgetButton.cpp">
+      <Filter>Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UiEditorManager.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UiEditLayer.cpp">
+      <Filter>Views</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UiLayerAttrs.cpp">
+      <Filter>Views</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UiLayerItems.cpp">
+      <Filter>Views</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MainScene.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UiLayer.h">
+      <Filter>Views</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UiWidgetLabel.h">
+      <Filter>Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UiWidgetNode.h">
+      <Filter>Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UiWidgetImage.h">
+      <Filter>Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UiWidgetButton.h">
+      <Filter>Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UiEditorManager.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UiEditLayer.h">
+      <Filter>Views</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UiLayerAttrs.h">
+      <Filter>Views</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UiLayerItems.h">
+      <Filter>Views</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
