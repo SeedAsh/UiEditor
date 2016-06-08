@@ -1,5 +1,7 @@
 #include "MainScene.h"
 #include "UiLayer.h"
+#include "UiWidgetsLayer.h"
+#include "UiWidgetsManager.h"
 
 USING_NS_CC;
 
@@ -22,7 +24,12 @@ bool MainScene::init()
 	addChild(bg);
 
 	auto uiLayer = UiLayer::create();
-	addChild(uiLayer);
+	//addChild(uiLayer);
+
+	auto widgetsLayer = UiWidgetsLayer::create();
+	addChild(widgetsLayer);
+
+
 	return true;
 }
 

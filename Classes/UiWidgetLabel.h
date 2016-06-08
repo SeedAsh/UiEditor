@@ -8,7 +8,14 @@ class UiWidgetLabel : public UiWidgetNode
 {
 public:
 	virtual bool init();
-	CREATE_FUNC(UiWidgetLabel);
+	static UiWidgetLabel *create(const char *str);
+
+	void setStr(const char *str);
+private:
+	UiWidgetLabel(const char *str): m_str(str){}
+private:
+	cocos2d::CCLabelTTF *m_label;
+	std::string m_str;
 };
 
 #endif 

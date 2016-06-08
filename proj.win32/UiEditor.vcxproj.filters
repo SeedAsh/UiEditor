@@ -19,6 +19,9 @@
     <Filter Include="Util">
       <UniqueIdentifier>{50d566f2-2490-4618-ac9f-b3626ec99953}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Util\xml">
+      <UniqueIdentifier>{a175e156-612c-4975-b5fa-2b309f1d742e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -48,14 +51,26 @@
     <ClCompile Include="..\Classes\UiEditorManager.cpp">
       <Filter>Model</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\UiEditLayer.cpp">
-      <Filter>Views</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\UiLayerAttrs.cpp">
       <Filter>Views</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\UiLayerItems.cpp">
       <Filter>Views</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UiWidgetsManager.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UiEditorNotifier.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UiWidgetsLayer.cpp">
+      <Filter>Views</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\XmlHelper.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\cocos2dx\support\tinyxml2\tinyxml2.cpp">
+      <Filter>Util\xml</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -86,14 +101,26 @@
     <ClInclude Include="..\Classes\UiEditorManager.h">
       <Filter>Model</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\UiEditLayer.h">
-      <Filter>Views</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\UiLayerAttrs.h">
       <Filter>Views</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\UiLayerItems.h">
       <Filter>Views</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UiWidgetsManager.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UiEditorNotifier.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UiWidgetsLayer.h">
+      <Filter>Views</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\XmlHelper.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cocos2dx\support\tinyxml2\tinyxml2.h">
+      <Filter>Util\xml</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
