@@ -58,6 +58,14 @@ void UiWidgetNode::drawFrame()
 	drawNode->drawSegment(leftTop, leftBottom, 0.5f, ccc4f(0.5f, 0.5f, 0.5f, 1));
 }
 
+void UiWidgetNode::initBaseInfo(rapidxml::xml_node<> *node)
+{
+    float x = atof(node->first_node("x")->value());
+    float y = atof(node->first_node("y")->value());
+    setPosition(ccp(x, y));
+    
+}
+
 
 
 

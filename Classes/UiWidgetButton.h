@@ -3,12 +3,12 @@
 
 #include "cocos2d.h"
 #include "UiWidgetNode.h"
-
+#include "rapidxml/rapidxml.hpp"
 class UiWidgetButton : public UiWidgetNode
 {
 public:
 	virtual bool init();
-	CREATE_FUNC(UiWidgetButton);
+    static UiWidgetButton *create(rapidxml::xml_node<>* node);
 };
 
 #endif 

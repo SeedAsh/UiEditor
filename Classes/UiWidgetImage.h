@@ -3,28 +3,18 @@
 
 #include "cocos2d.h"
 #include "UiWidgetNode.h"
-
+#include "rapidxml/rapidxml.hpp"
 class UiWidgetImage : public UiWidgetNode
 {
 public:
-    virtual bool init();  
-	static UiWidgetImage *create(const char *path);
-	UiWidgetImage(const char *path) : m_path(path){}
+    static UiWidgetImage *create(rapidxml::xml_node<>* node);
+    UiWidgetImage(rapidxml::xml_node<>* node);
 private:
 
 
 private:
 	cocos2d::CCSprite *m_spr;
-	std::string m_path;
 };
 
-class ImageCreater : public UiWidgetCreator
-{
-public:
-	virtual UiWidgetNode* create();
-	void setString(const char *path){ m_path = path; }
-private:
-	std::string m_path;
-};
 
 #endif 

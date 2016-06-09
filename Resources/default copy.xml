@@ -1,0 +1,19 @@
+<config>
+    <button>
+    	<normal></normal>
+    	<selected></selected>
+    	<disabled></disabled>
+    	<x>0</x>
+    	<y>0</y>
+    </button>
+    <label>
+    	<text></text>
+    	<x>0</x>
+    	<y>0</y>
+    </label>
+    <image>
+    	<path></path>
+    	<x>0</x>
+    	<y>0</y>
+    </image>
+</config>

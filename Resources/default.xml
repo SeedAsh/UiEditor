@@ -1,0 +1,7 @@
+<config>
+    <image>
+    	<path>win.png</path>
+    	<x>200</x>
+    	<y>1000</y>
+    </image>
+</config>

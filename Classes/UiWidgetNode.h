@@ -2,7 +2,7 @@
 #define __UIWIDGETNODE_H__
 
 #include "cocos2d.h"
-
+#include "rapidxml/rapidxml.hpp"
 class UiWidgetNode
 	: public cocos2d::CCNode
 	, public cocos2d::CCTouchDelegate
@@ -16,6 +16,7 @@ protected:
 	UiWidgetNode(int touchPriority = 0){}
 	virtual void onTouchBegan(){}
 	void drawFrame();
+    void initBaseInfo(rapidxml::xml_node<> *node);
 private:
 	virtual void onEnter();
 	virtual void onExit();
@@ -26,14 +27,4 @@ private:
 	cocos2d::CCPoint m_oldPos;
 };
 
-class UiWidgetCreator
-{
-public:
-	virtual UiWidgetNode* create() = 0;
-	void setPosition(const cocos2d::CCPoint &pt){ m_pos = pt; }
-protected:
-	cocos2d::CCPoint m_pos;
-	int m_id;
-	
-};
 #endif 

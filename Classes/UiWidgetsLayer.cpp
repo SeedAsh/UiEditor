@@ -85,8 +85,7 @@ void UiWidgetsLayer::drawFrame()
 	drawNode->drawSegment(leftTop, leftBottom, 0.5f, ccc4f(0.5f, 0.5f, 0.5f, 1));
 }
 
-void UiWidgetsLayer::addNewWidget(UiWidgetCreator *creator)
+void UiWidgetsLayer::addNewWidget(UiWidgetNode *node)
 {
-	auto node = creator->create();
 	addChild(node);
 }

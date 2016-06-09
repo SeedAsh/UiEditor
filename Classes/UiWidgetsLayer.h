@@ -12,7 +12,7 @@ public:
     virtual bool init();  
     CREATE_FUNC(UiWidgetsLayer);
 public:
-	virtual void addNewWidget(UiWidgetCreator *creator);
+	virtual void addNewWidget(UiWidgetNode *node);
 	void menuCloseCallback(cocos2d::CCObject* pSender);
 private:
 	void virtual onEnter();

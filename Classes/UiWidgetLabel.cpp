@@ -1,8 +1,9 @@
 #include "UiWidgetLabel.h"
 USING_NS_CC;
 
-UiWidgetLabel *UiWidgetLabel::create(const char *str)
+UiWidgetLabel *UiWidgetLabel::create(rapidxml::xml_node<>* node)
 {
+    const char* str;
 	UiWidgetLabel *label = new UiWidgetLabel(str);
 	label->init();
 	label->autorelease();
