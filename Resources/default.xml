@@ -2,6 +2,6 @@
     <image>
     	<path>win.png</path>
     	<x>200</x>
-    	<y>1000</y>
+    	<y>100</y>
     </image>
 </config>

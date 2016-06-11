@@ -41,7 +41,7 @@ bool UiWidgetsLayer::init()
 		this,
 		menu_selector(UiWidgetsLayer::menuCloseCallback));
 	auto menu = CCMenu::create(pCloseItem, NULL);
-	addChild(menu);
+	//addChild(menu);
 	menu->setPosition(ccp(100, 100));
 
 	drawFrame();

@@ -37,7 +37,10 @@ void UiWidgetsManager::removeView(IUiWidgetView *view)
 void UiWidgetsManager::test()
 {
 	//NOTIFY_VIEWS(addNewWidget, &creator);
-    loadXmlFile("default.xml");
+    //CCFileUtils *utils = CCFileUtils::sharedFileUtils();
+    //string fullPath = utils->fullPathForFilename("default.xml");
+    string fullPath = "/Users/James/Projects/cocosProj/cocos2d-x-2.2.6/projects/UiEditor/Resources/default.xml";
+    loadXmlFile(fullPath.c_str());
     
 }
 
@@ -49,10 +52,8 @@ void UiWidgetsManager::loadXmlFile(const char* path)
     doc.parse<0>(fdoc.data());
     
     xml_node<> *layout = doc.first_node();
-
     for(auto node = layout->first_node(); node != NULL; node = node->next_sibling())
     {
-        
         auto iter = m_widgets.find(node->name());
         if(iter != m_widgets.end())
         {

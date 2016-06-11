@@ -9,6 +9,9 @@ class UiWidgetButton : public UiWidgetNode
 public:
 	virtual bool init();
     static UiWidgetButton *create(rapidxml::xml_node<>* node);
+    static UiWidgetButton *create();
+    
+    virtual void onTouchBegan();
 };
 
 #endif 
