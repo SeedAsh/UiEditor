@@ -1,59 +1,57 @@
-#include "UiWidgetsLayer.h"
+#include "UiWidgetsLayout.h"
 #include "UiWidgetImage.h"
 #include "UiWidgetsManager.h"
+#include "rapidxml/rapidxml_print.hpp"
+#include <fstream>
 
 USING_NS_CC;
-void UiWidgetsLayer::onEnter()
+using namespace std;
+using namespace rapidxml;
+void UiWidgetsLayout::onEnter()
 {
 	CCLayer::onEnter();
 	UiWidgetsManager::theMgr()->addView(this);
 }
 
-void UiWidgetsLayer::onExit()
+void UiWidgetsLayout::onExit()
 {
 	CCLayer::onExit();
 	UiWidgetsManager::theMgr()->removeView(this);
 }
 
-bool UiWidgetsLayer::init()
+bool UiWidgetsLayout::init()
 {
 	if (!CCLayer::init())
 	{
 		return false;
 	}
     setTouchEnabled(true);
-	setContentSize(ccp(kLayerWidth, kLayerHeight));
+	CCSize size(kLayerWidth, kLayerHeight);
+	setContentSize(size);
 	ignoreAnchorPointForPosition(false);
 	auto winSize = CCDirector::sharedDirector()->getWinSize();
 	setPosition(winSize.width * 0.5f, winSize.height * 0.5);
-	/*
-	auto spr = CCSprite::create("win.png");
-	addChild(spr);
-	//*/
-
 	//addClippingNode();
-
-
 
 	CCMenuItemImage *pCloseItem = CCMenuItemImage::create(
 		"btn.png",
 		"btn.png",
 		this,
-		menu_selector(UiWidgetsLayer::menuCloseCallback));
+		menu_selector(UiWidgetsLayout::menuCloseCallback));
 	auto menu = CCMenu::create(pCloseItem, NULL);
-	//addChild(menu);
+	addChild(menu);
 	menu->setPosition(ccp(100, 100));
 
-	drawFrame();
+	drawFrame(size);
 	return true;
 }
 
-void UiWidgetsLayer::menuCloseCallback(CCObject* pSender)
+void UiWidgetsLayout::menuCloseCallback(CCObject* pSender)
 {
 	UiWidgetsManager::theMgr()->test();
 }
 
-void UiWidgetsLayer::addClippingNode()
+void UiWidgetsLayout::addClippingNode()
 {
 	CCLayerColor *back = CCLayerColor::create(ccc4(0, 0, 0, 255));
 	back->setContentSize(CCSize(kLayerWidth, kLayerHeight));
@@ -68,9 +66,9 @@ void UiWidgetsLayer::addClippingNode()
 	clip->addChild(spr);
 }
 
-void UiWidgetsLayer::drawFrame()
+void UiWidgetsLayout::drawFrame(CCSize &size)
 {
-	CCSize size = getContentSize();
+	
 	CCPoint leftBottom(0, 0);
 	CCPoint leftTop(0, size.height);
 	CCPoint rightBottom(size.width, 0);
@@ -85,7 +83,43 @@ void UiWidgetsLayer::drawFrame()
 	drawNode->drawSegment(leftTop, leftBottom, 0.5f, ccc4f(0.5f, 0.5f, 0.5f, 1));
 }
 
-void UiWidgetsLayer::addNewWidget(UiWidgetNode *node)
+void UiWidgetsLayout::addNewWidget(UiWidgetNode *node)
 {
 	addChild(node);
+	m_widgets.push_back(node);
+}
+
+void UiWidgetsLayout::clearNodes()
+{
+	m_widgets.clear();
+}
+
+void UiWidgetsLayout::removeNode(UiWidgetNode *node)
+{
+	auto iter = find(m_widgets.begin(), m_widgets.end(), node);
+	if (iter != m_widgets.end())
+	{
+		m_widgets.erase(iter);
+	}
+}
+
+void UiWidgetsLayout::save()
+{
+	xml_document<> doc;
+	auto layout = doc.allocate_node(node_element, "layout");
+	doc.append_node(layout);
+	for (auto iter = m_widgets.begin(); iter != m_widgets.end(); ++iter)
+	{
+		(*iter)->save(doc, layout);
+	}
+	
+	ofstream out("save.xml");
+	out << doc;
+
+	out.close();
+}
+
+void UiWidgetsLayout::newLayout(CCSize size)
+{
+	drawFrame(size);
 }

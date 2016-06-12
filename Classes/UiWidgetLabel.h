@@ -7,11 +7,10 @@
 class UiWidgetLabel : public UiWidgetNode
 {
 public:
-	virtual bool init();
 	static UiWidgetLabel *create(rapidxml::xml_node<>* node);
-	void setStr(const char *str);
+	virtual void save(rapidxml::xml_document<> &doc, rapidxml::xml_node<> *node);
 private:
-	UiWidgetLabel(const char *str): m_str(str){}
+	UiWidgetLabel(rapidxml::xml_node<>* node);
 private:
 	cocos2d::CCLabelTTF *m_label;
 	std::string m_str;

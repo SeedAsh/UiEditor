@@ -3,6 +3,14 @@
 
 #include "cocos2d.h"
 #include "rapidxml/rapidxml.hpp"
+
+enum WidgetType
+{
+	kWidgetImage,
+	kWidgetButton,
+	kWidgetLabel,
+};
+
 class UiWidgetNode
 	: public cocos2d::CCNode
 	, public cocos2d::CCTouchDelegate
@@ -11,12 +19,14 @@ public:
 	virtual ~UiWidgetNode(){}
 	virtual bool init();
 public:
-	virtual void save(){}
+	virtual void save(rapidxml::xml_document<> &doc, rapidxml::xml_node<> *node){}
 protected:
 	UiWidgetNode(int touchPriority = 0){}
 	virtual void onTouchBegan(){}
 	void drawFrame();
     void initBaseInfo(rapidxml::xml_node<> *node);
+	void saveBaseInfo(rapidxml::xml_document<> &doc, rapidxml::xml_node<> *node);
+	void setId(int id){ m_id = id; }
 private:
 	virtual void onEnter();
 	virtual void onExit();
@@ -25,6 +35,7 @@ private:
 private:
 	int m_touchPriority;
 	cocos2d::CCPoint m_oldPos;
+	int m_id;
 };
 
 #endif 

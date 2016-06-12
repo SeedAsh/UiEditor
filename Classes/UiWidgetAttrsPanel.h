@@ -1,16 +1,16 @@
-#ifndef __UILAYERITEMS_H__
-#define __UILAYERITEMS_H__
+#ifndef __UILAYERATTRS_H__
+#define __UILAYERATTRS_H__
 
 #include "cocos2d.h"
 #include "UiEditorNotifier.h"
 
-class UiLayerItems
+class UiWidgetAttrsPanel 
 	: public cocos2d::CCNode
 	, public IUiView
 {
 public:
     virtual bool init();  
-    CREATE_FUNC(UiLayerItems);
+    CREATE_FUNC(UiWidgetAttrsPanel);
 private:
 	virtual void onEnter();
 	virtual void onExit();

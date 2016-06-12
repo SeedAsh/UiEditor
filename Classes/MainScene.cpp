@@ -1,6 +1,6 @@
 #include "MainScene.h"
 #include "UiLayer.h"
-#include "UiWidgetsLayer.h"
+#include "UiWidgetsLayout.h"
 #include "UiWidgetsManager.h"
 #include "UiWidgetButton.h"
 USING_NS_CC;
@@ -27,15 +27,17 @@ bool MainScene::init()
     UiWidgetsManager::theMgr()->init();
     
 	auto uiLayer = UiLayer::create();
-	//addChild(uiLayer);
+	addChild(uiLayer);
 
-	auto widgetsLayer = UiWidgetsLayer::create();
-	addChild(widgetsLayer);
+	auto layout = UiWidgetsLayout::create();
+	addChild(layout);
 
-
-    UiWidgetButton * btn  = UiWidgetButton::create();
-    btn->setPosition(ccp(300, 300));
-    addChild(btn);
+	/* mac test
+	  UiWidgetButton * btn  = UiWidgetButton::create();
+	  btn->setPosition(ccp(300, 300));
+	  addChild(btn);
+	*/
+  
 	return true;
 }
 

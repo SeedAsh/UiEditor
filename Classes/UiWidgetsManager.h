@@ -16,7 +16,9 @@ class UiWidgetNode;
 
 struct IUiWidgetView
 {
+	virtual void newLayout(cocos2d::CCSize size){}
 	virtual void addNewWidget(UiWidgetNode *node){}
+	virtual void save(){}
 };
 
 
@@ -26,12 +28,12 @@ public:
 	static UiWidgetsManager *theMgr();
 	~UiWidgetsManager(){}
 	void test();
+	void save();
 	void addView(IUiWidgetView *view);
 	void removeView(IUiWidgetView *view);
 	
 	void loadXmlFile(const char* path);
     void init();
-  
 private:
 	UiWidgetsManager(){}
     void registerWidget(std::string name, std::function<UiWidgetNode *(rapidxml::xml_node<>*)> creater);
@@ -40,7 +42,8 @@ private:
     UiWidgetNode *createImage(rapidxml::xml_node<> *node);
 private:
 	std::vector<IUiWidgetView *> m_views;
-    // rapidxml::xml_node<> std::function<void()>
-    std::unordered_map<std::string, std::function<UiWidgetNode *(rapidxml::xml_node<>*)> > m_widgets;
+    std::unordered_map<std::string, std::function<UiWidgetNode *(rapidxml::xml_node<>*)> > m_creaters;
+	
+	
 };
 #endif

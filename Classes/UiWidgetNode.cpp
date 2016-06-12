@@ -1,6 +1,7 @@
 #include "UiWidgetNode.h"
 USING_NS_CC;
 using namespace std;
+using namespace rapidxml;
 
 bool UiWidgetNode::init()
 {
@@ -62,10 +63,24 @@ void UiWidgetNode::drawFrame()
 
 void UiWidgetNode::initBaseInfo(rapidxml::xml_node<> *node)
 {
+	m_id = atoi(node->first_node("id")->value());
     float x = atof(node->first_node("x")->value());
     float y = atof(node->first_node("y")->value());
     setPosition(ccp(x, y));
-    
+}
+
+void UiWidgetNode::saveBaseInfo(rapidxml::xml_document<> &doc, rapidxml::xml_node<> *node)
+{
+	char str[100] = { 0 };
+
+	sprintf(str, "%d", m_id);
+	node->append_node(doc.allocate_node(node_element, "id", doc.allocate_string(str)));
+
+	sprintf(str, "%.02f", getPositionX());
+	node->append_node(doc.allocate_node(node_element, "x", doc.allocate_string(str)));
+
+	sprintf(str, "%.02f", getPositionY());
+	node->append_node(doc.allocate_node(node_element, "y", doc.allocate_string(str)));
 }
 
 

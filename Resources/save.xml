@@ -1,20 +1,20 @@
-<layout width="600" height="800">
+<layout>
 	<image>
 		<id>1</id>
-		<x>626.16</x>
-		<y>85.19</y>
+		<x>1.73</x>
+		<y>2.20</y>
 		<path>win.png</path>
 	</image>
 	<label>
 		<id>2</id>
-		<x>62.42</x>
-		<y>619.54</y>
+		<x>-0.25</x>
+		<y>-1.09</y>
 		<text>hello hey</text>
 	</label>
 	<button>
 		<id>3</id>
-		<x>500.00</x>
-		<y>400.00</y>
+		<x>-0.80</x>
+		<y>2.14</y>
 		<normal>btn.png</normal>
 		<selected>btn.png</selected>
 		<disabled>btn.png</disabled>

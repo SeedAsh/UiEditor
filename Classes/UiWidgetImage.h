@@ -9,11 +9,14 @@ class UiWidgetImage : public UiWidgetNode
 public:
     static UiWidgetImage *create(rapidxml::xml_node<>* node);
     UiWidgetImage(rapidxml::xml_node<>* node);
+
+	virtual void save(rapidxml::xml_document<> &doc, rapidxml::xml_node<> *node);
 private:
 
 
 private:
 	cocos2d::CCSprite *m_spr;
+	std::string m_path;
 };
 
 

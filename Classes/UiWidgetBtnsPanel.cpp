@@ -1,20 +1,22 @@
-#include "UiLayerAttrs.h"
+#include "UiWidgetBtnsPanel.h"
 
 USING_NS_CC;
-void UiLayerAttrs::onEnter()
+
+void UiWidgetBtnsPanel::onEnter()
 {
 	CCNode::onEnter();
 	UiEditorNotifier::theNotifier()->addView(this);
 }
 
-void UiLayerAttrs::onExit()
+void UiWidgetBtnsPanel::onExit()
 {
 	CCNode::onExit();
 	UiEditorNotifier::theNotifier()->removeView(this);
 }
 
-bool UiLayerAttrs::init()
+bool UiWidgetBtnsPanel::init()
 {
+
 	return true;
 }
 

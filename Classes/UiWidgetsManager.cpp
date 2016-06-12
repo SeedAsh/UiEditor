@@ -37,11 +37,15 @@ void UiWidgetsManager::removeView(IUiWidgetView *view)
 void UiWidgetsManager::test()
 {
 	//NOTIFY_VIEWS(addNewWidget, &creator);
-    //CCFileUtils *utils = CCFileUtils::sharedFileUtils();
-    //string fullPath = utils->fullPathForFilename("default.xml");
-    string fullPath = "/Users/James/Projects/cocosProj/cocos2d-x-2.2.6/projects/UiEditor/Resources/default.xml";
+    CCFileUtils *utils = CCFileUtils::sharedFileUtils();
+    string fullPath = utils->fullPathForFilename("default.xml");
+   // string fullPath = "/Users/James/Projects/cocosProj/cocos2d-x-2.2.6/projects/UiEditor/Resources/default.xml";
     loadXmlFile(fullPath.c_str());
-    
+}
+
+void UiWidgetsManager::save()
+{
+	NOTIFY_VIEWS(save);
 }
 
 void UiWidgetsManager::loadXmlFile(const char* path)
@@ -52,10 +56,15 @@ void UiWidgetsManager::loadXmlFile(const char* path)
     doc.parse<0>(fdoc.data());
     
     xml_node<> *layout = doc.first_node();
+	CCSize size;
+	size.width = atof(layout->first_attribute("width")->value());
+	size.height = atof(layout->first_attribute("height")->value());
+	NOTIFY_VIEWS(newLayout, size);
+
     for(auto node = layout->first_node(); node != NULL; node = node->next_sibling())
     {
-        auto iter = m_widgets.find(node->name());
-        if(iter != m_widgets.end())
+        auto iter = m_creaters.find(node->name());
+        if(iter != m_creaters.end())
         {
             auto widget = iter->second(node);
             NOTIFY_VIEWS(addNewWidget, widget);
@@ -63,12 +72,11 @@ void UiWidgetsManager::loadXmlFile(const char* path)
     }
 }
 
-
 void UiWidgetsManager::registerWidget(string name, function<UiWidgetNode *(rapidxml::xml_node<>*)> creater)
 {
-    if(m_widgets.find(name) == m_widgets.end())
+    if(m_creaters.find(name) == m_creaters.end())
     {
-        m_widgets.insert(make_pair(name, creater));
+        m_creaters.insert(make_pair(name, creater));
     }
 }
 

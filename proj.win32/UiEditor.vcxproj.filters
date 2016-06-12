@@ -19,8 +19,8 @@
     <Filter Include="Util">
       <UniqueIdentifier>{50d566f2-2490-4618-ac9f-b3626ec99953}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Util\xml">
-      <UniqueIdentifier>{a175e156-612c-4975-b5fa-2b309f1d742e}</UniqueIdentifier>
+    <Filter Include="Util\rapidxml">
+      <UniqueIdentifier>{8fb1775e-1820-4940-b0ac-9e8aa9ae297e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -51,26 +51,23 @@
     <ClCompile Include="..\Classes\UiEditorManager.cpp">
       <Filter>Model</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\UiLayerAttrs.cpp">
-      <Filter>Views</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\UiLayerItems.cpp">
-      <Filter>Views</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\UiWidgetsManager.cpp">
       <Filter>Model</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\UiEditorNotifier.cpp">
       <Filter>Model</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\UiWidgetsLayer.cpp">
-      <Filter>Views</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\XmlHelper.cpp">
       <Filter>Util</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\cocos2dx\support\tinyxml2\tinyxml2.cpp">
-      <Filter>Util\xml</Filter>
+    <ClCompile Include="..\Classes\UiWidgetsLayout.cpp">
+      <Filter>Views</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UiWidgetAttrsPanel.cpp">
+      <Filter>Views</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UiWidgetBtnsPanel.cpp">
+      <Filter>Views</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -101,26 +98,35 @@
     <ClInclude Include="..\Classes\UiEditorManager.h">
       <Filter>Model</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\UiLayerAttrs.h">
-      <Filter>Views</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\UiLayerItems.h">
-      <Filter>Views</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\UiWidgetsManager.h">
       <Filter>Model</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\UiEditorNotifier.h">
       <Filter>Model</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\UiWidgetsLayer.h">
-      <Filter>Views</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\XmlHelper.h">
       <Filter>Util</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\cocos2dx\support\tinyxml2\tinyxml2.h">
-      <Filter>Util\xml</Filter>
+    <ClInclude Include="..\Classes\rapidxml\rapidxml.hpp">
+      <Filter>Util\rapidxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\rapidxml\rapidxml_iterators.hpp">
+      <Filter>Util\rapidxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\rapidxml\rapidxml_print.hpp">
+      <Filter>Util\rapidxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\rapidxml\rapidxml_utils.hpp">
+      <Filter>Util\rapidxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UiWidgetsLayout.h">
+      <Filter>Views</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UiWidgetAttrsPanel.h">
+      <Filter>Views</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UiWidgetBtnsPanel.h">
+      <Filter>Views</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
