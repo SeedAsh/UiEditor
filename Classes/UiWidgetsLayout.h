@@ -32,6 +32,7 @@ private:
 	const int kLayerHeight = 700;
 private:
 	std::vector<UiWidgetNode *>m_widgets;
+	cocos2d::CCSize m_layoutSize;
 
 };
 

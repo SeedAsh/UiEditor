@@ -107,6 +107,13 @@ void UiWidgetsLayout::save()
 {
 	xml_document<> doc;
 	auto layout = doc.allocate_node(node_element, "layout");
+
+	char str[100] = { 0 };
+	sprintf(str, "%f", m_layoutSize.width);
+	layout->append_attribute(doc.allocate_attribute("width", doc.allocate_string(str)));
+	sprintf(str, "%f", m_layoutSize.height);
+	layout->append_attribute(doc.allocate_attribute("height", doc.allocate_string(str)));
+
 	doc.append_node(layout);
 	for (auto iter = m_widgets.begin(); iter != m_widgets.end(); ++iter)
 	{
@@ -121,5 +128,6 @@ void UiWidgetsLayout::save()
 
 void UiWidgetsLayout::newLayout(CCSize size)
 {
+	m_layoutSize = size;
 	drawFrame(size);
 }

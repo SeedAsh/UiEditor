@@ -67,6 +67,7 @@ void UiWidgetNode::initBaseInfo(rapidxml::xml_node<> *node)
     float x = atof(node->first_node("x")->value());
     float y = atof(node->first_node("y")->value());
     setPosition(ccp(x, y));
+	setAnchorPoint(ccp(0.5f, 0.5f));
 }
 
 void UiWidgetNode::saveBaseInfo(rapidxml::xml_document<> &doc, rapidxml::xml_node<> *node)
