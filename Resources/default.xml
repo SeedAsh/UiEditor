@@ -20,5 +20,10 @@
 		<selected>menu_money.png</selected>
 		<disabled>menu_money.png</disabled>
 	</button>
+    <emptyBox>
+        <id>0</id>
+        <x>0</x>
+        <y>0</y>
+    </emptyBox>
 </layout>
 

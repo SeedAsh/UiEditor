@@ -16,7 +16,7 @@ private:
 	void onOpenBtnClicked(cocos2d::CCObject* pSender);
 	void onCloseBtnClicked(cocos2d::CCObject* pSender);
 
-	cocos2d::CCMenuItemSprite *UiLayer::getBtnWithLabel(const char* str, cocos2d::SEL_MenuHandler selector);
+	cocos2d::CCMenuItemSprite *getBtnWithLabel(const char* str, cocos2d::SEL_MenuHandler selector);
 };
 
 #endif 

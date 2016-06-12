@@ -2,7 +2,7 @@
 #include "UiWidgetBtnsPanel.h"
 #include "UiWidgetAttrsPanel.h"
 #include "UiWidgetsManager.h"
-#include <shlobj.h>
+//#include <shlobj.h>
 
 USING_NS_CC;
 
@@ -13,7 +13,7 @@ bool UiLayer::init()
 	addChild(UiWidgetAttrsPanel::create());
 	return true;
 }
-
+    
 static CCNode *getBtnSprite(const char *str)
 {
 	const char* path = "btn.png";
@@ -73,7 +73,7 @@ void UiLayer::onSaveBtnClicked(cocos2d::CCObject* pSender)
 	UiWidgetsManager::theMgr()->save();
 }
 
-
+/*
 BOOL hanGetPath()
 {
 	BROWSEINFO bi;
@@ -97,11 +97,38 @@ BOOL hanGetPath()
 	}
 	return FALSE;
 }
+ */
 
 void UiLayer::onOpenBtnClicked(cocos2d::CCObject* pSender)
 {
 	//hanGetPath();
-	UiWidgetsManager::theMgr()->test();
+    
+    /*
+     void UIEditorMainViewMenu::onOpenBtnClicked()
+     {
+     OPENFILENAMEA ofn;
+     char szFile[MAX_PATH];
+     
+     ZeroMemory(&ofn, sizeof(ofn));
+     ofn.lStructSize = sizeof(ofn);
+     ofn.lpstrFile = szFile;
+     
+     ofn.lpstrFile[0] = 0;
+     ofn.nMaxFile = sizeof(szFile);
+     ofn.lpstrFilter = "xml file\0*.xml\0";
+     ofn.nFilterIndex = 1;
+     ofn.lpstrFileTitle = NULL;
+     ofn.nMaxFileTitle = 0;
+     ofn.Flags = OFN_PATHMUSTEXIST | OFN_FILEMUSTEXIST;
+     
+     if (::GetOpenFileNameA(&ofn))
+     {
+     m_filePath = szFile;
+     UIEditorManager::theMgr()->createLayoutView(szFile);
+     }
+     }
+     */
+     UiWidgetsManager::theMgr()->test();
 }
 
 void UiLayer::onCloseBtnClicked(cocos2d::CCObject* pSender)

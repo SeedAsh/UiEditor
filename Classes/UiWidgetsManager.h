@@ -44,6 +44,8 @@ private:
     UiWidgetNode *createButton(rapidxml::xml_node<> *node);
     UiWidgetNode *createLabel(rapidxml::xml_node<> *node);
     UiWidgetNode *createImage(rapidxml::xml_node<> *node);
+    UiWidgetNode *createEmptyBox(rapidxml::xml_node<> *node);
+    
 	bool checkXml(rapidxml::xml_node<> *layout);
 private:
 	std::vector<IUiWidgetView *> m_views;

@@ -141,13 +141,10 @@
 		1A0C01061D081F6B00A7C67F /* UiEditorManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C00ED1D081F6B00A7C67F /* UiEditorManager.cpp */; };
 		1A0C01071D081F6B00A7C67F /* UiEditorNotifier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C00EF1D081F6B00A7C67F /* UiEditorNotifier.cpp */; };
 		1A0C01081D081F6B00A7C67F /* UiLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C00F11D081F6B00A7C67F /* UiLayer.cpp */; };
-		1A0C01091D081F6B00A7C67F /* UiLayerAttrs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C00F31D081F6B00A7C67F /* UiLayerAttrs.cpp */; };
-		1A0C010A1D081F6B00A7C67F /* UiLayerItems.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C00F51D081F6B00A7C67F /* UiLayerItems.cpp */; };
 		1A0C010B1D081F6B00A7C67F /* UiWidgetButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C00F71D081F6B00A7C67F /* UiWidgetButton.cpp */; };
 		1A0C010C1D081F6B00A7C67F /* UiWidgetImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C00F91D081F6B00A7C67F /* UiWidgetImage.cpp */; };
 		1A0C010D1D081F6B00A7C67F /* UiWidgetLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C00FB1D081F6B00A7C67F /* UiWidgetLabel.cpp */; };
 		1A0C010E1D081F6B00A7C67F /* UiWidgetNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C00FD1D081F6B00A7C67F /* UiWidgetNode.cpp */; };
-		1A0C010F1D081F6B00A7C67F /* UiWidgetsLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C00FF1D081F6B00A7C67F /* UiWidgetsLayer.cpp */; };
 		1A0C01101D081F6B00A7C67F /* UiWidgetsManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C01011D081F6B00A7C67F /* UiWidgetsManager.cpp */; };
 		1A0C01111D081F6B00A7C67F /* XmlHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C01031D081F6B00A7C67F /* XmlHelper.cpp */; };
 		1A0C02FE1D08207D00A7C67F /* CCActionEaseEx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C02301D08207D00A7C67F /* CCActionEaseEx.cpp */; };
@@ -230,6 +227,11 @@
 		1A233B7C1D08624500C371A0 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A233B761D08624500C371A0 /* license.txt */; };
 		1A233B7D1D08624500C371A0 /* manual.html in Resources */ = {isa = PBXBuildFile; fileRef = 1A233B771D08624500C371A0 /* manual.html */; };
 		1A27573F1697CF2B00504026 /* CCEditBoxImplAndroid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A27573D1697CF2B00504026 /* CCEditBoxImplAndroid.cpp */; };
+		1A67FBEE1D0D8F9B0042E353 /* UiWidgetAttrsPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A67FBE81D0D8F9B0042E353 /* UiWidgetAttrsPanel.cpp */; };
+		1A67FBEF1D0D8F9B0042E353 /* UiWidgetBtnsPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A67FBEA1D0D8F9B0042E353 /* UiWidgetBtnsPanel.cpp */; };
+		1A67FBF01D0D8F9B0042E353 /* UiWidgetsLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A67FBEC1D0D8F9B0042E353 /* UiWidgetsLayout.cpp */; };
+		1A67FBF31D0D93120042E353 /* UiWidgetEmptyBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A67FBF11D0D93120042E353 /* UiWidgetEmptyBox.cpp */; };
+		1A67FBF61D0D95B20042E353 /* EmptyBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A67FBF41D0D95B20042E353 /* EmptyBox.cpp */; };
 		1A8F3B6E175E05DA00049216 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A8F3B43175E05DA00049216 /* Animation.cpp */; };
 		1A8F3B6F175E05DA00049216 /* AnimationState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A8F3B45175E05DA00049216 /* AnimationState.cpp */; };
 		1A8F3B70175E05DA00049216 /* AnimationStateData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A8F3B47175E05DA00049216 /* AnimationStateData.cpp */; };
@@ -561,10 +563,6 @@
 		1A0C00F01D081F6B00A7C67F /* UiEditorNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UiEditorNotifier.h; path = ../Classes/UiEditorNotifier.h; sourceTree = "<group>"; };
 		1A0C00F11D081F6B00A7C67F /* UiLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UiLayer.cpp; path = ../Classes/UiLayer.cpp; sourceTree = "<group>"; };
 		1A0C00F21D081F6B00A7C67F /* UiLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UiLayer.h; path = ../Classes/UiLayer.h; sourceTree = "<group>"; };
-		1A0C00F31D081F6B00A7C67F /* UiLayerAttrs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UiLayerAttrs.cpp; path = ../Classes/UiLayerAttrs.cpp; sourceTree = "<group>"; };
-		1A0C00F41D081F6B00A7C67F /* UiLayerAttrs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UiLayerAttrs.h; path = ../Classes/UiLayerAttrs.h; sourceTree = "<group>"; };
-		1A0C00F51D081F6B00A7C67F /* UiLayerItems.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UiLayerItems.cpp; path = ../Classes/UiLayerItems.cpp; sourceTree = "<group>"; };
-		1A0C00F61D081F6B00A7C67F /* UiLayerItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UiLayerItems.h; path = ../Classes/UiLayerItems.h; sourceTree = "<group>"; };
 		1A0C00F71D081F6B00A7C67F /* UiWidgetButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UiWidgetButton.cpp; path = ../Classes/UiWidgetButton.cpp; sourceTree = "<group>"; };
 		1A0C00F81D081F6B00A7C67F /* UiWidgetButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UiWidgetButton.h; path = ../Classes/UiWidgetButton.h; sourceTree = "<group>"; };
 		1A0C00F91D081F6B00A7C67F /* UiWidgetImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UiWidgetImage.cpp; path = ../Classes/UiWidgetImage.cpp; sourceTree = "<group>"; };
@@ -573,8 +571,6 @@
 		1A0C00FC1D081F6B00A7C67F /* UiWidgetLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UiWidgetLabel.h; path = ../Classes/UiWidgetLabel.h; sourceTree = "<group>"; };
 		1A0C00FD1D081F6B00A7C67F /* UiWidgetNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UiWidgetNode.cpp; path = ../Classes/UiWidgetNode.cpp; sourceTree = "<group>"; };
 		1A0C00FE1D081F6B00A7C67F /* UiWidgetNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UiWidgetNode.h; path = ../Classes/UiWidgetNode.h; sourceTree = "<group>"; };
-		1A0C00FF1D081F6B00A7C67F /* UiWidgetsLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UiWidgetsLayer.cpp; path = ../Classes/UiWidgetsLayer.cpp; sourceTree = "<group>"; };
-		1A0C01001D081F6B00A7C67F /* UiWidgetsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UiWidgetsLayer.h; path = ../Classes/UiWidgetsLayer.h; sourceTree = "<group>"; };
 		1A0C01011D081F6B00A7C67F /* UiWidgetsManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UiWidgetsManager.cpp; path = ../Classes/UiWidgetsManager.cpp; sourceTree = "<group>"; };
 		1A0C01021D081F6B00A7C67F /* UiWidgetsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UiWidgetsManager.h; path = ../Classes/UiWidgetsManager.h; sourceTree = "<group>"; };
 		1A0C01031D081F6B00A7C67F /* XmlHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XmlHelper.cpp; path = ../Classes/XmlHelper.cpp; sourceTree = "<group>"; };
@@ -758,6 +754,16 @@
 		1A233B7B1D08624500C371A0 /* rapidxml_utils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rapidxml_utils.hpp; sourceTree = "<group>"; };
 		1A27573D1697CF2B00504026 /* CCEditBoxImplAndroid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCEditBoxImplAndroid.cpp; sourceTree = "<group>"; };
 		1A27573E1697CF2B00504026 /* CCEditBoxImplAndroid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEditBoxImplAndroid.h; sourceTree = "<group>"; };
+		1A67FBE81D0D8F9B0042E353 /* UiWidgetAttrsPanel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UiWidgetAttrsPanel.cpp; path = ../Classes/UiWidgetAttrsPanel.cpp; sourceTree = "<group>"; };
+		1A67FBE91D0D8F9B0042E353 /* UiWidgetAttrsPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UiWidgetAttrsPanel.h; path = ../Classes/UiWidgetAttrsPanel.h; sourceTree = "<group>"; };
+		1A67FBEA1D0D8F9B0042E353 /* UiWidgetBtnsPanel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UiWidgetBtnsPanel.cpp; path = ../Classes/UiWidgetBtnsPanel.cpp; sourceTree = "<group>"; };
+		1A67FBEB1D0D8F9B0042E353 /* UiWidgetBtnsPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UiWidgetBtnsPanel.h; path = ../Classes/UiWidgetBtnsPanel.h; sourceTree = "<group>"; };
+		1A67FBEC1D0D8F9B0042E353 /* UiWidgetsLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UiWidgetsLayout.cpp; path = ../Classes/UiWidgetsLayout.cpp; sourceTree = "<group>"; };
+		1A67FBED1D0D8F9B0042E353 /* UiWidgetsLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UiWidgetsLayout.h; path = ../Classes/UiWidgetsLayout.h; sourceTree = "<group>"; };
+		1A67FBF11D0D93120042E353 /* UiWidgetEmptyBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UiWidgetEmptyBox.cpp; path = ../Classes/UiWidgetEmptyBox.cpp; sourceTree = "<group>"; };
+		1A67FBF21D0D93120042E353 /* UiWidgetEmptyBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UiWidgetEmptyBox.h; path = ../Classes/UiWidgetEmptyBox.h; sourceTree = "<group>"; };
+		1A67FBF41D0D95B20042E353 /* EmptyBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EmptyBox.cpp; path = ../Classes/EmptyBox.cpp; sourceTree = "<group>"; };
+		1A67FBF51D0D95B20042E353 /* EmptyBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmptyBox.h; path = ../Classes/EmptyBox.h; sourceTree = "<group>"; };
 		1A8F3B43175E05DA00049216 /* Animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Animation.cpp; sourceTree = "<group>"; };
 		1A8F3B44175E05DA00049216 /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
 		1A8F3B45175E05DA00049216 /* AnimationState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AnimationState.cpp; sourceTree = "<group>"; };
@@ -1346,6 +1352,16 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1A67FBF41D0D95B20042E353 /* EmptyBox.cpp */,
+				1A67FBF51D0D95B20042E353 /* EmptyBox.h */,
+				1A67FBF11D0D93120042E353 /* UiWidgetEmptyBox.cpp */,
+				1A67FBF21D0D93120042E353 /* UiWidgetEmptyBox.h */,
+				1A67FBE81D0D8F9B0042E353 /* UiWidgetAttrsPanel.cpp */,
+				1A67FBE91D0D8F9B0042E353 /* UiWidgetAttrsPanel.h */,
+				1A67FBEA1D0D8F9B0042E353 /* UiWidgetBtnsPanel.cpp */,
+				1A67FBEB1D0D8F9B0042E353 /* UiWidgetBtnsPanel.h */,
+				1A67FBEC1D0D8F9B0042E353 /* UiWidgetsLayout.cpp */,
+				1A67FBED1D0D8F9B0042E353 /* UiWidgetsLayout.h */,
 				1A233B751D08624500C371A0 /* rapidxml */,
 				1A0C00EB1D081F6B00A7C67F /* MainScene.cpp */,
 				1A0C00EC1D081F6B00A7C67F /* MainScene.h */,
@@ -1355,10 +1371,6 @@
 				1A0C00F01D081F6B00A7C67F /* UiEditorNotifier.h */,
 				1A0C00F11D081F6B00A7C67F /* UiLayer.cpp */,
 				1A0C00F21D081F6B00A7C67F /* UiLayer.h */,
-				1A0C00F31D081F6B00A7C67F /* UiLayerAttrs.cpp */,
-				1A0C00F41D081F6B00A7C67F /* UiLayerAttrs.h */,
-				1A0C00F51D081F6B00A7C67F /* UiLayerItems.cpp */,
-				1A0C00F61D081F6B00A7C67F /* UiLayerItems.h */,
 				1A0C00F71D081F6B00A7C67F /* UiWidgetButton.cpp */,
 				1A0C00F81D081F6B00A7C67F /* UiWidgetButton.h */,
 				1A0C00F91D081F6B00A7C67F /* UiWidgetImage.cpp */,
@@ -1367,8 +1379,6 @@
 				1A0C00FC1D081F6B00A7C67F /* UiWidgetLabel.h */,
 				1A0C00FD1D081F6B00A7C67F /* UiWidgetNode.cpp */,
 				1A0C00FE1D081F6B00A7C67F /* UiWidgetNode.h */,
-				1A0C00FF1D081F6B00A7C67F /* UiWidgetsLayer.cpp */,
-				1A0C01001D081F6B00A7C67F /* UiWidgetsLayer.h */,
 				1A0C01011D081F6B00A7C67F /* UiWidgetsManager.cpp */,
 				1A0C01021D081F6B00A7C67F /* UiWidgetsManager.h */,
 				1A0C01031D081F6B00A7C67F /* XmlHelper.cpp */,
@@ -2141,7 +2151,6 @@
 				15A3D9151682F7D5002FB0C5 /* b2World.cpp in Sources */,
 				1A0C03141D08207D00A7C67F /* CCColliderDetector.cpp in Sources */,
 				15A3D9161682F7D5002FB0C5 /* b2WorldCallbacks.cpp in Sources */,
-				1A0C01091D081F6B00A7C67F /* UiLayerAttrs.cpp in Sources */,
 				1A0C03111D08207D00A7C67F /* CCDisplayFactory.cpp in Sources */,
 				15A3D9171682F7D5002FB0C5 /* b2ChainAndCircleContact.cpp in Sources */,
 				15A3D9181682F7D5002FB0C5 /* b2ChainAndPolygonContact.cpp in Sources */,
@@ -2162,6 +2171,7 @@
 				15A3D9211682F7D5002FB0C5 /* b2FrictionJoint.cpp in Sources */,
 				15A3D9221682F7D5002FB0C5 /* b2GearJoint.cpp in Sources */,
 				1A0C03041D08207D00A7C67F /* CCActionTimeline.cpp in Sources */,
+				1A67FBF31D0D93120042E353 /* UiWidgetEmptyBox.cpp in Sources */,
 				15A3D9231682F7D5002FB0C5 /* b2Joint.cpp in Sources */,
 				15A3D9241682F7D5002FB0C5 /* b2MouseJoint.cpp in Sources */,
 				1A0C031D1D08207D00A7C67F /* CCComAudio.cpp in Sources */,
@@ -2188,6 +2198,7 @@
 				1A0C03221D08207D00A7C67F /* UILayout.cpp in Sources */,
 				15A3D99C1682F7F9002FB0C5 /* cpPinJoint.c in Sources */,
 				15A3D99D1682F7F9002FB0C5 /* cpPivotJoint.c in Sources */,
+				1A67FBF61D0D95B20042E353 /* EmptyBox.cpp in Sources */,
 				15A3D99E1682F7F9002FB0C5 /* cpRatchetJoint.c in Sources */,
 				1A0C033B1D08207D00A7C67F /* ImageViewReader.cpp in Sources */,
 				15A3D99F1682F7F9002FB0C5 /* cpRotaryLimitJoint.c in Sources */,
@@ -2258,7 +2269,6 @@
 				15A3DA451682F826002FB0C5 /* CCParticleSystemQuadLoader.cpp in Sources */,
 				1A0C01081D081F6B00A7C67F /* UiLayer.cpp in Sources */,
 				15A3DA461682F826002FB0C5 /* CCScale9SpriteLoader.cpp in Sources */,
-				1A0C010F1D081F6B00A7C67F /* UiWidgetsLayer.cpp in Sources */,
 				1A0C03461D08207D00A7C67F /* WidgetReader.cpp in Sources */,
 				15A3DA471682F826002FB0C5 /* CCScrollViewLoader.cpp in Sources */,
 				15A3DA481682F826002FB0C5 /* CCSpriteLoader.cpp in Sources */,
@@ -2288,7 +2298,9 @@
 				15A3DA5C1682F826002FB0C5 /* CCTableViewCell.cpp in Sources */,
 				15A3DA5D1682F826002FB0C5 /* HttpClient.cpp in Sources */,
 				1A0C03411D08207D00A7C67F /* LoadingBarReader.cpp in Sources */,
+				1A67FBEE1D0D8F9B0042E353 /* UiWidgetAttrsPanel.cpp in Sources */,
 				15A3DA5E1682F826002FB0C5 /* CCPhysicsDebugNode.cpp in Sources */,
+				1A67FBF01D0D8F9B0042E353 /* UiWidgetsLayout.cpp in Sources */,
 				15A3DA5F1682F826002FB0C5 /* CCPhysicsSprite.cpp in Sources */,
 				1A0C03021D08207D00A7C67F /* CCActionNode.cpp in Sources */,
 				15A3DAEB1682F8A6002FB0C5 /* CDAudioManager.m in Sources */,
@@ -2299,6 +2311,7 @@
 				15A3DAEF1682F8A6002FB0C5 /* SimpleAudioEngine_objc.m in Sources */,
 				1A27573F1697CF2B00504026 /* CCEditBoxImplAndroid.cpp in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
+				1A67FBEF1D0D8F9B0042E353 /* UiWidgetBtnsPanel.cpp in Sources */,
 				1A0C02FF1D08207D00A7C67F /* CCActionFrame.cpp in Sources */,
 				1AC3624916D4A1E8000847F2 /* AppController.mm in Sources */,
 				1A0C03171D08207D00A7C67F /* CCDataReaderHelper.cpp in Sources */,
@@ -2340,7 +2353,6 @@
 				1AB87035175E0A84005D39BF /* WebSocket.cpp in Sources */,
 				1A9CE8781765A12C000E3062 /* AssetsManager.cpp in Sources */,
 				1A0C01111D081F6B00A7C67F /* XmlHelper.cpp in Sources */,
-				1A0C010A1D081F6B00A7C67F /* UiLayerItems.cpp in Sources */,
 				1A0C03301D08207D00A7C67F /* UILabelBMFont.cpp in Sources */,
 				1A0C03401D08207D00A7C67F /* ListViewReader.cpp in Sources */,
 				1A0C03331D08207D00A7C67F /* UISlider.cpp in Sources */,

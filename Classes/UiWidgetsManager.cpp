@@ -2,6 +2,7 @@
 #include "UiWidgetImage.h"
 #include "UiWidgetLabel.h"
 #include "UiWidgetButton.h"
+#include "UiWidgetEmptyBox.h"
 #include "rapidxml/rapidxml_utils.hpp"
 #include "rapidxml/rapidxml_print.hpp"
 #include <algorithm>
@@ -112,6 +113,7 @@ void UiWidgetsManager::init()
     registerWidget("button", bind(&UiWidgetsManager::createButton, this, _1));
     registerWidget("label", bind(&UiWidgetsManager::createLabel, this, _1));
     registerWidget("image", bind(&UiWidgetsManager::createImage, this, _1));
+    registerWidget("emptyBox", bind(&UiWidgetsManager::createEmptyBox, this, _1));
  
 }
 
@@ -150,6 +152,11 @@ UiWidgetNode *UiWidgetsManager::createLabel(xml_node<> *node)
 UiWidgetNode *UiWidgetsManager::createImage(xml_node<> *node)
 {
    return UiWidgetImage::create(node);
+}
+
+UiWidgetNode *UiWidgetsManager::createEmptyBox(xml_node<> *node)
+{
+    return UiWidgetEmptyBox::create(node);
 }
 
 int UiWidgetsManager::getWidgetId(int id)
