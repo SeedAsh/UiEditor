@@ -18,7 +18,6 @@ public:
     static UiWidgetButton *create(rapidxml::xml_node<>* node);
     static UiWidgetButton *create();
     
-    virtual void onTouchBegan();
 	virtual void save(rapidxml::xml_document<> &doc, rapidxml::xml_node<> *node);
 private:
 	UiWidgetButton(){}

@@ -33,22 +33,8 @@ bool UiWidgetsLayout::init()
 	setPosition(winSize.width * 0.5f, winSize.height * 0.5);
 	//addClippingNode();
 
-	CCMenuItemImage *pCloseItem = CCMenuItemImage::create(
-		"btn.png",
-		"btn.png",
-		this,
-		menu_selector(UiWidgetsLayout::menuCloseCallback));
-	auto menu = CCMenu::create(pCloseItem, NULL);
-	addChild(menu);
-	menu->setPosition(ccp(100, 100));
-
 	drawFrame(size);
 	return true;
-}
-
-void UiWidgetsLayout::menuCloseCallback(CCObject* pSender)
-{
-	UiWidgetsManager::theMgr()->test();
 }
 
 void UiWidgetsLayout::addClippingNode()

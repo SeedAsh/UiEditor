@@ -55,8 +55,3 @@ void UiWidgetButton::save(rapidxml::xml_document<> &doc, rapidxml::xml_node<> *n
 	myNode->append_node(doc.allocate_node(rapidxml::node_element, "selected", m_attr.selectedPath.c_str()));
 	myNode->append_node(doc.allocate_node(rapidxml::node_element, "disabled", m_attr.disabledPath.c_str()));
 }
-
-void UiWidgetButton::onTouchBegan()
-{
-   //UiWidgetsManager::theMgr()->test();
-}

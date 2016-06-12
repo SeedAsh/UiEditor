@@ -16,10 +16,16 @@ bool AppDelegate::applicationDidFinishLaunching() {
     CCDirector* pDirector = CCDirector::sharedDirector();
     CCEGLView* pEGLView = CCEGLView::sharedOpenGLView();
 
-	pEGLView->setFrameSize(1440, 900);
+	pEGLView->setFrameSize(1440, 1000);
 
     pDirector->setOpenGLView(pEGLView);
 	
+	
+	CCFileUtils::sharedFileUtils()->addSearchPath("..\\Resources");
+	auto paths = CCFileUtils::sharedFileUtils()->getSearchPaths();
+
+	CCSprite::create("btn.png")->getContentSize();
+
     // set FPS. the default value is 1.0/60 if you don't call this
     pDirector->setAnimationInterval(1.0 / 60);
 
@@ -28,7 +34,6 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	
     // run
     pDirector->runWithScene(pScene);
-
     return true;
 }
 

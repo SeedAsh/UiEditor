@@ -2,6 +2,7 @@
 #include "UiWidgetBtnsPanel.h"
 #include "UiWidgetAttrsPanel.h"
 #include "UiWidgetsManager.h"
+#include <shlobj.h>
 
 USING_NS_CC;
 
@@ -68,7 +69,33 @@ void UiLayer::onSaveBtnClicked(cocos2d::CCObject* pSender)
 	UiWidgetsManager::theMgr()->save();
 }
 
+
+BOOL hanGetPath()
+{
+	BROWSEINFO bi;
+	LPITEMIDLIST pIDList;
+	wchar_t buffer[100] = { 0 };
+
+	//初始化入口参数bi开始
+	bi.hwndOwner = CCEGLView::sharedOpenGLView()->getHWnd();
+	bi.pidlRoot = NULL;
+	bi.pszDisplayName = buffer;//此参数如为NULL则不能显示对话框
+	bi.lpszTitle = L"设置文件查找路径";
+	bi.ulFlags = BIF_RETURNONLYFSDIRS;
+	bi.lpfn = NULL;
+	//bi.iImage = IDI_ICON_MAIN;
+	bi.lParam = 0;
+	pIDList = SHBrowseForFolder(&bi);//调用显示选择对话框
+	if (pIDList)
+	{
+		SHGetPathFromIDList(pIDList, buffer);
+		return TRUE;
+	}
+	return FALSE;
+}
+
 void UiLayer::onOpenBtnClicked(cocos2d::CCObject* pSender)
 {
-
+	//hanGetPath();
+	UiWidgetsManager::theMgr()->test();
 }

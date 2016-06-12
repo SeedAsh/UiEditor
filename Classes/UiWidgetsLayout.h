@@ -15,8 +15,6 @@ public:
 	virtual void addNewWidget(UiWidgetNode *node);
 	virtual void save();
 	virtual void newLayout(cocos2d::CCSize size);
-public:
-	void menuCloseCallback(cocos2d::CCObject* pSender);
 private:
 	void virtual onEnter();
 	void virtual onExit();
