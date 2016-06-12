@@ -117,3 +117,13 @@ void UiWidgetsLayout::newLayout(CCSize size)
 	m_layoutSize = size;
 	drawFrame(size);
 }
+
+void UiWidgetsLayout::closeLayout()
+{
+	m_widgets.clear();
+	removeAllChildren();
+
+	CCSize size(kLayerWidth, kLayerHeight);
+	drawFrame(size);
+
+}

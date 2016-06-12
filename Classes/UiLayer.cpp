@@ -51,10 +51,14 @@ void UiLayer::initBaseBtns()
 	CCMenuItemSprite* openBtn = getBtnWithLabel("open", menu_selector(UiLayer::onOpenBtnClicked));
 	openBtn->setPosition(ccp(winsize.width * 0.1f, -winsize.height * 0.45f));
 
+	CCMenuItemSprite* closeBtn = getBtnWithLabel("close", menu_selector(UiLayer::onCloseBtnClicked));
+	closeBtn->setPosition(ccp(winsize.width * 0.2f, -winsize.height * 0.45f));
+
 	CCMenu *menu = CCMenu::create();
 	menu->addChild(updateBtn);
 	menu->addChild(saveBtn);
 	menu->addChild(openBtn);
+	menu->addChild(closeBtn);
 	addChild(menu);
 	
 }
@@ -98,4 +102,9 @@ void UiLayer::onOpenBtnClicked(cocos2d::CCObject* pSender)
 {
 	//hanGetPath();
 	UiWidgetsManager::theMgr()->test();
+}
+
+void UiLayer::onCloseBtnClicked(cocos2d::CCObject* pSender)
+{
+	UiWidgetsManager::theMgr()->closeCurLayout();
 }
