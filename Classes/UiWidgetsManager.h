@@ -18,6 +18,7 @@ struct IUiWidgetView
 {
 	virtual void newLayout(cocos2d::CCSize size){}
 	virtual void addNewWidget(UiWidgetNode *node){}
+	virtual void nodeSelected(UiWidgetNode *node){}
 	virtual void save(){}
 	virtual void closeLayout(){}
 };
@@ -30,6 +31,7 @@ public:
 	~UiWidgetsManager(){}
 	void test();
 	void save();
+	void nodeSelected(UiWidgetNode *node);
 	void addView(IUiWidgetView *view);
 	void removeView(IUiWidgetView *view);
 	

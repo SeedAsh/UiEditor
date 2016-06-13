@@ -15,7 +15,7 @@ UiWidgetEmptyBox::UiWidgetEmptyBox(rapidxml::xml_node<>* node)
 {
     initBaseInfo(node);
     
-    auto greenSpr = CCLayerColor::create(ccc4(0, 255, 0, 120));
+    auto greenSpr = CCLayerColor::create(ccc4(0, 255, 0, 80));
     CCSize size = CCSize(50, 50);
     greenSpr->setContentSize(size);
     auto emptyBox = EmptyBox::create();

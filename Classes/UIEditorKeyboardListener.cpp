@@ -1,10 +1,8 @@
-#include "EditorModel/UIEditorKeyboardListener.h"
-#include "util/KeyboardUtil.h"
+#include "UIEditorKeyboardListener.h"
 
 using namespace cocos2d;
 using namespace std;
 
-NS_UI_EDITOR_BEGIN
 
 
 UIEditorKeyboardListener::UIEditorKeyboardListener()
@@ -87,4 +85,3 @@ UIEditorKeyboardListener *UIEditorKeyboardListener::sharedListener()
 	}else if (isKeyDown(VK_LCONTROL) && isKeyDown('C'))
 	{
  */
- NS_UI_EDITOR_END

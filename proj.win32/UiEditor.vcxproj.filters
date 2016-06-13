@@ -69,6 +69,15 @@
     <ClCompile Include="..\Classes\UiWidgetBtnsPanel.cpp">
       <Filter>Views</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\EmptyBox.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UIEditorKeyboardListener.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UiWidgetEmptyBox.cpp">
+      <Filter>Widgets</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -127,6 +136,15 @@
     </ClInclude>
     <ClInclude Include="..\Classes\UiWidgetBtnsPanel.h">
       <Filter>Views</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\EmptyBox.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UIEditorKeyboardListener.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UiWidgetEmptyBox.h">
+      <Filter>Widgets</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -24,12 +24,12 @@ bool UiWidgetNode::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 	auto pos = convertToNodeSpace(pTouch->getLocation());
 	auto size = getContentSize();
 	CCRect rect(0, 0, size.width, size.height);
-    //test
-    onTouchBegan();
+
 	if (rect.containsPoint(pos))
 	{
 		m_oldPos = getParent()->convertToNodeSpace(pTouch->getLocation());
 		onTouchBegan();
+		UiWidgetsManager::theMgr()->nodeSelected(this);
 		return true;
 	}
 	return false;

@@ -18,17 +18,20 @@ void UiWidgetBtnsPanel::onExit()
 bool UiWidgetBtnsPanel::init()
 {
 	auto winsize = CCDirector::sharedDirector()->getWinSize();
-	CCMenuItemSprite* imageBtn = getBtnWithLabel("label", menu_selector(UiWidgetBtnsPanel::onImageBtnClicked));
+	CCMenuItemSprite* imageBtn = getBtnWithLabel("image", menu_selector(UiWidgetBtnsPanel::onImageBtnClicked));
 	imageBtn->setPosition(ccp(-winsize.width * 0.45f, winsize.height * 0.45f));
-	CCMenuItemSprite* buttonBtn = getBtnWithLabel("image", menu_selector(UiWidgetBtnsPanel::onButtonBtnClicked));
+	CCMenuItemSprite* buttonBtn = getBtnWithLabel("button", menu_selector(UiWidgetBtnsPanel::onButtonBtnClicked));
 	buttonBtn->setPosition(ccp(-winsize.width * 0.45f, winsize.height * 0.35f));
-	CCMenuItemSprite* LabelBtn = getBtnWithLabel("button", menu_selector(UiWidgetBtnsPanel::onLabelBtnClicked));
-	LabelBtn->setPosition(ccp(-winsize.width * 0.45f, winsize.height * 0.25f));
+	CCMenuItemSprite* labelBtn = getBtnWithLabel("label", menu_selector(UiWidgetBtnsPanel::onLabelBtnClicked));
+	labelBtn->setPosition(ccp(-winsize.width * 0.45f, winsize.height * 0.25f));
+	CCMenuItemSprite* emptyBoxBtn = getBtnWithLabel("emptyBox", menu_selector(UiWidgetBtnsPanel::onEmptyBoxBtnClicked));
+	emptyBoxBtn->setPosition(ccp(-winsize.width * 0.45f, winsize.height * 0.15f));
 
 	CCMenu *menu = CCMenu::create();
 	menu->addChild(imageBtn);
 	menu->addChild(buttonBtn);
-	menu->addChild(LabelBtn);
+	menu->addChild(labelBtn);
+	menu->addChild(emptyBoxBtn);
 	addChild(menu);
 
 	return true;
@@ -74,4 +77,9 @@ void UiWidgetBtnsPanel::onButtonBtnClicked(cocos2d::CCObject* pSender)
 void UiWidgetBtnsPanel::onImageBtnClicked(cocos2d::CCObject* pSender)
 {
 	UiWidgetsManager::theMgr()->createWidgetByName("image");
+}
+
+void UiWidgetBtnsPanel::onEmptyBoxBtnClicked(cocos2d::CCObject* pSender)
+{
+	UiWidgetsManager::theMgr()->createWidgetByName("emptyBox");
 }

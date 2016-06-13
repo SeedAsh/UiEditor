@@ -3,10 +3,20 @@
 #include "UiWidgetsManager.h"
 #include "rapidxml/rapidxml_print.hpp"
 #include <fstream>
+#include "UIEditorKeyboardListener.h"
 
 USING_NS_CC;
 using namespace std;
 using namespace rapidxml;
+
+#define isKeyDown(vk_code) (UIEditorKeyboardListener::sharedListener()->isKeyDown(vk_code)) 
+#define isKeyDownUp(vk_code, str) (UIEditorKeyboardListener::sharedListener()->isKeyDownUp(vk_code, str))
+
+UiWidgetsLayout::UiWidgetsLayout()
+:m_curSelectedNode(NULL)
+{
+
+}
 void UiWidgetsLayout::onEnter()
 {
 	CCLayer::onEnter();
@@ -32,7 +42,8 @@ bool UiWidgetsLayout::init()
 	auto winSize = CCDirector::sharedDirector()->getWinSize();
 	setPosition(winSize.width * 0.5f, winSize.height * 0.5);
 	//addClippingNode();
-
+	
+	scheduleUpdate();
 	drawFrame(size);
 	return true;
 }
@@ -52,6 +63,17 @@ void UiWidgetsLayout::addClippingNode()
 	clip->addChild(spr);
 }
 
+void UiWidgetsLayout::update(float dt)
+{
+	if (isKeyDown(VK_DELETE))
+	{
+		removeNode(m_curSelectedNode);
+		m_curSelectedNode = NULL;
+	
+	}
+
+}
+
 void UiWidgetsLayout::drawFrame(CCSize &size)
 {
 	
@@ -67,6 +89,10 @@ void UiWidgetsLayout::drawFrame(CCSize &size)
 	drawNode->drawSegment(rightBottom, rightTop, 0.5f, ccc4f(0.5f, 0.5f, 0.5f, 1));
 	drawNode->drawSegment(rightTop, leftTop, 0.5f, ccc4f(0.5f, 0.5f, 0.5f, 1));
 	drawNode->drawSegment(leftTop, leftBottom, 0.5f, ccc4f(0.5f, 0.5f, 0.5f, 1));
+
+
+	float offsetY = (kLayerHeight- size.height) * 0.5f;
+	drawNode->setPositionY(offsetY);
 }
 
 void UiWidgetsLayout::addNewWidget(UiWidgetNode *node)
@@ -85,6 +111,7 @@ void UiWidgetsLayout::removeNode(UiWidgetNode *node)
 	auto iter = find(m_widgets.begin(), m_widgets.end(), node);
 	if (iter != m_widgets.end())
 	{
+		node->removeFromParent();
 		m_widgets.erase(iter);
 	}
 }
@@ -106,7 +133,7 @@ void UiWidgetsLayout::save()
 		(*iter)->save(doc, layout);
 	}
 	
-	ofstream out("save.xml");
+	ofstream out("../assets/loyout.xml");
 	out << doc;
 
 	out.close();
@@ -126,4 +153,9 @@ void UiWidgetsLayout::closeLayout()
 	CCSize size(kLayerWidth, kLayerHeight);
 	drawFrame(size);
 
+}
+
+void UiWidgetsLayout::nodeSelected(UiWidgetNode *node)
+{
+	m_curSelectedNode = node;
 }

@@ -55,6 +55,11 @@ void UiWidgetsManager::save()
 	NOTIFY_VIEWS(save);
 }
 
+void UiWidgetsManager::nodeSelected(UiWidgetNode *node)
+{
+	NOTIFY_VIEWS(nodeSelected, node);
+}
+
 void UiWidgetsManager::loadXmlFile(const char* path)
 {
     file<> fdoc(path);
@@ -82,7 +87,8 @@ void UiWidgetsManager::loadXmlFile(const char* path)
 
 void UiWidgetsManager::createWidgetByName(const char *name)
 {
-	const string defaultPath = "default.xml";
+	//rapidxml 的路径和cocos的搜索路径不共享
+	const string defaultPath = "../assets/default.xml";
 	file<> fdoc(defaultPath.c_str());
 	xml_document<> doc;
 	doc.parse<0>(fdoc.data());

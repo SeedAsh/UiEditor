@@ -20,7 +20,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     pDirector->setOpenGLView(pEGLView);
 	
-	
+	CCFileUtils::sharedFileUtils()->addSearchPath("..\\assets");
 	CCFileUtils::sharedFileUtils()->addSearchPath("..\\Resources");
 	auto paths = CCFileUtils::sharedFileUtils()->getSearchPaths();
 
