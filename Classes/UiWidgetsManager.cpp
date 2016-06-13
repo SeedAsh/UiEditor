@@ -49,6 +49,7 @@ void UiWidgetsManager::save()
 
 void UiWidgetsManager::refresh()
 {
+	m_maxWidgetId = 0;
 	loadXmlFile(m_xmlPath);
 }
 
