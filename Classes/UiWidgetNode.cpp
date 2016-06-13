@@ -4,6 +4,13 @@ USING_NS_CC;
 using namespace std;
 using namespace rapidxml;
 
+UiWidgetNode::UiWidgetNode(int touchPriority)
+: m_isShowIdTips(false)
+, m_idTips(NULL)
+{
+
+}
+
 bool UiWidgetNode::init()
 {
 	return true;
@@ -84,6 +91,33 @@ void UiWidgetNode::saveBaseInfo(rapidxml::xml_document<> &doc, rapidxml::xml_nod
 
 	sprintf(str, "%.02f", getPositionY());
 	node->append_node(doc.allocate_node(node_element, "y", doc.allocate_string(str)));
+}
+
+CCNode *UiWidgetNode::getIdTips()
+{
+	CCNode *node = CCNode::create();
+	CCSize tipSize = CCSize(20, 20);
+	CCLayerColor *bg = CCLayerColor::create(ccc4(175, 175, 175, 120));
+	bg->setContentSize(tipSize);
+	char str[100] = { 0 };
+	sprintf(str, "%d", m_id);
+	CCLabelTTF *label = CCLabelTTF::create(str, "Arial", 24);
+	label->setPosition(ccp(tipSize.width * 0.5f, tipSize.height *0.5f));
+
+	node->addChild(bg);
+	node->addChild(label);
+	return node;
+}
+
+void UiWidgetNode::callIdTipsToggle()
+{
+	if (!m_idTips)
+	{
+		m_idTips = getIdTips();
+		addChild(m_idTips, 1);
+	}
+	m_isShowIdTips = !m_isShowIdTips;
+	m_idTips->setVisible(m_isShowIdTips);
 }
 
 

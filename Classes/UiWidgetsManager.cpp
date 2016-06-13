@@ -35,24 +35,21 @@ void UiWidgetsManager::removeView(IUiWidgetView *view)
 	}
 }
 
-void UiWidgetsManager::test()
-{
-	//NOTIFY_VIEWS(addNewWidget, &creator);
-    CCFileUtils *utils = CCFileUtils::sharedFileUtils();
-    string fullPath = utils->fullPathForFilename("layout.xml");
-   // string fullPath = "/Users/James/Projects/cocosProj/cocos2d-x-2.2.6/projects/UiEditor/Resources/default.xml";
-    loadXmlFile(fullPath.c_str());
-}
-
 void UiWidgetsManager::closeCurLayout()
 {
 	NOTIFY_VIEWS(closeLayout);
 	m_maxWidgetId = 0;
+	m_xmlPath.clear();
 }
 
 void UiWidgetsManager::save()
 {
-	NOTIFY_VIEWS(save);
+	NOTIFY_VIEWS(save, m_xmlPath);
+}
+
+void UiWidgetsManager::refresh()
+{
+	loadXmlFile(m_xmlPath);
 }
 
 void UiWidgetsManager::nodeSelected(UiWidgetNode *node)
@@ -60,9 +57,13 @@ void UiWidgetsManager::nodeSelected(UiWidgetNode *node)
 	NOTIFY_VIEWS(nodeSelected, node);
 }
 
-void UiWidgetsManager::loadXmlFile(const char* path)
+void UiWidgetsManager::loadXmlFile(string path)
 {
-    file<> fdoc(path);
+	if (path.empty()) return;
+
+	m_xmlPath = path;
+
+    file<> fdoc(path.c_str());
     std::cout<<fdoc.data()<<std::endl;
     xml_document<> doc;
     doc.parse<0>(fdoc.data());
@@ -120,7 +121,6 @@ void UiWidgetsManager::init()
     registerWidget("label", bind(&UiWidgetsManager::createLabel, this, _1));
     registerWidget("image", bind(&UiWidgetsManager::createImage, this, _1));
     registerWidget("emptyBox", bind(&UiWidgetsManager::createEmptyBox, this, _1));
- 
 }
 
 bool UiWidgetsManager::checkXml(rapidxml::xml_node<> *layout)

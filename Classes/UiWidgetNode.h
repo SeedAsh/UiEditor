@@ -20,8 +20,9 @@ public:
 	virtual bool init();
 public:
 	virtual void save(rapidxml::xml_document<> &doc, rapidxml::xml_node<> *node){}
+	void callIdTipsToggle();
 protected:
-	UiWidgetNode(int touchPriority = 0){}
+	UiWidgetNode(int touchPriority = 0);
 	virtual void onTouchBegan(){}
 	void drawFrame();
     void initBaseInfo(rapidxml::xml_node<> *node);
@@ -32,10 +33,15 @@ private:
 	virtual void onExit();
 	virtual bool ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
 	virtual void ccTouchMoved(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+
+	cocos2d::CCNode *getIdTips();
 private:
 	int m_touchPriority;
 	cocos2d::CCPoint m_oldPos;
 	int m_id;
+
+	bool m_isShowIdTips;
+	cocos2d::CCNode *m_idTips;
 };
 
 #endif 

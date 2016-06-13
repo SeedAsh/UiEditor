@@ -1,8 +1,6 @@
 #include "MainScene.h"
-#include "UiLayer.h"
-#include "UiWidgetsLayout.h"
+#include "UiEditorPanel.h"
 #include "UiWidgetsManager.h"
-#include "UiWidgetButton.h"
 USING_NS_CC;
 
 CCScene* MainScene::scene()
@@ -23,21 +21,11 @@ bool MainScene::init()
 	CCLayerColor *bg = CCLayerColor::create(ccc4(60, 60, 60, 255));
 	addChild(bg);
 
-    
     UiWidgetsManager::theMgr()->init();
     
-	auto uiLayer = UiLayer::create();
-	addChild(uiLayer);
+	auto panel = UiEditorPanel::create();
+	addChild(panel);
 
-	auto layout = UiWidgetsLayout::create();
-	addChild(layout);
-
-	/* mac test
-	  UiWidgetButton * btn  = UiWidgetButton::create();
-	  btn->setPosition(ccp(300, 300));
-	  addChild(btn);
-	*/
-  
 	return true;
 }
 

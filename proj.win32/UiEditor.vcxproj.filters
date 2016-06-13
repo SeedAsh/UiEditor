@@ -33,9 +33,6 @@
     <ClCompile Include="..\Classes\MainScene.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\UiLayer.cpp">
-      <Filter>Views</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\UiWidgetLabel.cpp">
       <Filter>Widgets</Filter>
     </ClCompile>
@@ -54,20 +51,8 @@
     <ClCompile Include="..\Classes\UiWidgetsManager.cpp">
       <Filter>Model</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\UiEditorNotifier.cpp">
-      <Filter>Model</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\XmlHelper.cpp">
       <Filter>Util</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\UiWidgetsLayout.cpp">
-      <Filter>Views</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\UiWidgetAttrsPanel.cpp">
-      <Filter>Views</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\UiWidgetBtnsPanel.cpp">
-      <Filter>Views</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\EmptyBox.cpp">
       <Filter>Util</Filter>
@@ -77,6 +62,21 @@
     </ClCompile>
     <ClCompile Include="..\Classes\UiWidgetEmptyBox.cpp">
       <Filter>Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UiEditorAttrsPanel.cpp">
+      <Filter>Views</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UiEditorBtnsPanel.cpp">
+      <Filter>Views</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UiEditorLayoutPanel.cpp">
+      <Filter>Views</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UiEditorPanel.cpp">
+      <Filter>Views</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\util.cpp">
+      <Filter>Util</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -88,9 +88,6 @@
     </ClInclude>
     <ClInclude Include="..\Classes\MainScene.h">
       <Filter>Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\UiLayer.h">
-      <Filter>Views</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\UiWidgetLabel.h">
       <Filter>Widgets</Filter>
@@ -110,9 +107,6 @@
     <ClInclude Include="..\Classes\UiWidgetsManager.h">
       <Filter>Model</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\UiEditorNotifier.h">
-      <Filter>Model</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\XmlHelper.h">
       <Filter>Util</Filter>
     </ClInclude>
@@ -128,15 +122,6 @@
     <ClInclude Include="..\Classes\rapidxml\rapidxml_utils.hpp">
       <Filter>Util\rapidxml</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\UiWidgetsLayout.h">
-      <Filter>Views</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\UiWidgetAttrsPanel.h">
-      <Filter>Views</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\UiWidgetBtnsPanel.h">
-      <Filter>Views</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\EmptyBox.h">
       <Filter>Util</Filter>
     </ClInclude>
@@ -145,6 +130,21 @@
     </ClInclude>
     <ClInclude Include="..\Classes\UiWidgetEmptyBox.h">
       <Filter>Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UiEditorAttrsPanel.h">
+      <Filter>Views</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UiEditorBtnsPanel.h">
+      <Filter>Views</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UiEditorLayoutPanel.h">
+      <Filter>Views</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UiEditorPanel.h">
+      <Filter>Views</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\util.h">
+      <Filter>Util</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

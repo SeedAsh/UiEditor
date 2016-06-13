@@ -19,7 +19,7 @@ struct IUiWidgetView
 	virtual void newLayout(cocos2d::CCSize size){}
 	virtual void addNewWidget(UiWidgetNode *node){}
 	virtual void nodeSelected(UiWidgetNode *node){}
-	virtual void save(){}
+	virtual void save(std::string &filePath){}
 	virtual void closeLayout(){}
 };
 
@@ -29,13 +29,13 @@ class UiWidgetsManager
 public:
 	static UiWidgetsManager *theMgr();
 	~UiWidgetsManager(){}
-	void test();
 	void save();
+	void refresh();
 	void nodeSelected(UiWidgetNode *node);
 	void addView(IUiWidgetView *view);
 	void removeView(IUiWidgetView *view);
 	
-	void loadXmlFile(const char* path);
+	void loadXmlFile(std::string path);
 	void createWidgetByName(const char *name);
     void init();
 	int getWidgetId(int id);
@@ -53,7 +53,7 @@ private:
 	std::vector<IUiWidgetView *> m_views;
     std::unordered_map<std::string, std::function<UiWidgetNode *(rapidxml::xml_node<>*)> > m_creaters;
 	int m_maxWidgetId; //当前最大控件的id;
-	
+	std::string m_xmlPath;
 	
 };
 #endif

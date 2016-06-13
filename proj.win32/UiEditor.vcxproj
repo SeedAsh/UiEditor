@@ -137,17 +137,17 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="..\Classes\MainScene.cpp" />
     <ClCompile Include="..\Classes\UIEditorKeyboardListener.cpp" />
     <ClCompile Include="..\Classes\UiWidgetEmptyBox.cpp" />
-    <ClCompile Include="..\Classes\UiWidgetsLayout.cpp" />
+    <ClCompile Include="..\Classes\UiEditorLayoutPanel.cpp" />
     <ClCompile Include="..\Classes\UiEditorManager.cpp" />
-    <ClCompile Include="..\Classes\UiEditorNotifier.cpp" />
-    <ClCompile Include="..\Classes\UiLayer.cpp" />
-    <ClCompile Include="..\Classes\UiWidgetAttrsPanel.cpp" />
-    <ClCompile Include="..\Classes\UiWidgetBtnsPanel.cpp" />
+    <ClCompile Include="..\Classes\UiEditorPanel.cpp" />
+    <ClCompile Include="..\Classes\UiEditorAttrsPanel.cpp" />
+    <ClCompile Include="..\Classes\UiEditorBtnsPanel.cpp" />
     <ClCompile Include="..\Classes\UiWidgetButton.cpp" />
     <ClCompile Include="..\Classes\UiWidgetImage.cpp" />
     <ClCompile Include="..\Classes\UiWidgetsManager.cpp" />
     <ClCompile Include="..\Classes\UiWidgetLabel.cpp" />
     <ClCompile Include="..\Classes\UiWidgetNode.cpp" />
+    <ClCompile Include="..\Classes\util.cpp" />
     <ClCompile Include="..\Classes\XmlHelper.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -161,17 +161,17 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\Classes\rapidxml\rapidxml_utils.hpp" />
     <ClInclude Include="..\Classes\UIEditorKeyboardListener.h" />
     <ClInclude Include="..\Classes\UiWidgetEmptyBox.h" />
-    <ClInclude Include="..\Classes\UiWidgetsLayout.h" />
+    <ClInclude Include="..\Classes\UiEditorLayoutPanel.h" />
     <ClInclude Include="..\Classes\UiEditorManager.h" />
-    <ClInclude Include="..\Classes\UiEditorNotifier.h" />
-    <ClInclude Include="..\Classes\UiLayer.h" />
-    <ClInclude Include="..\Classes\UiWidgetAttrsPanel.h" />
-    <ClInclude Include="..\Classes\UiWidgetBtnsPanel.h" />
+    <ClInclude Include="..\Classes\UiEditorPanel.h" />
+    <ClInclude Include="..\Classes\UiEditorAttrsPanel.h" />
+    <ClInclude Include="..\Classes\UiEditorBtnsPanel.h" />
     <ClInclude Include="..\Classes\UiWidgetButton.h" />
     <ClInclude Include="..\Classes\UiWidgetImage.h" />
     <ClInclude Include="..\Classes\UiWidgetsManager.h" />
     <ClInclude Include="..\Classes\UiWidgetLabel.h" />
     <ClInclude Include="..\Classes\UiWidgetNode.h" />
+    <ClInclude Include="..\Classes\util.h" />
     <ClInclude Include="..\Classes\XmlHelper.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
