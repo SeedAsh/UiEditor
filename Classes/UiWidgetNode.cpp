@@ -104,6 +104,7 @@ CCNode *UiWidgetNode::getIdTips()
 	CCLabelTTF *label = CCLabelTTF::create(str, "Arial", 24);
 	label->setPosition(ccp(tipSize.width * 0.5f, tipSize.height *0.5f));
 
+	node->setContentSize(tipSize);
 	node->addChild(bg);
 	node->addChild(label);
 	return node;
@@ -114,6 +115,9 @@ void UiWidgetNode::callIdTipsToggle()
 	if (!m_idTips)
 	{
 		m_idTips = getIdTips();
+		m_idTips->setAnchorPoint(ccp(0, 1));
+		m_idTips->setPositionX(getContentSize().width);
+		m_idTips->setPositionY(getContentSize().height);
 		addChild(m_idTips, 1);
 	}
 	m_isShowIdTips = !m_isShowIdTips;

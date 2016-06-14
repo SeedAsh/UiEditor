@@ -67,12 +67,15 @@ void UiEditorBtnsPanel::initFuncsBtn()
 	updateBtn->setPosition(ccp(winsize.width * 0.45f, -winsize.height * 0.35f));
 	CCMenuItemSprite* closeBtn = getBtnWithLabel("close", menu_selector(UiEditorBtnsPanel::onCloseBtnClicked));
 	closeBtn->setPosition(ccp(winsize.width * 0.45f, -winsize.height * 0.45f));
+	CCMenuItemSprite* openXmlBtn = getBtnWithLabel("xml", menu_selector(UiEditorBtnsPanel::onShowXmlBtnClicked));
+	openXmlBtn->setPosition(ccp(winsize.width * 0.45f, winsize.height * 0.45f));
 
 	CCMenu *menu = CCMenu::create();
 	menu->addChild(updateBtn);
 	menu->addChild(saveBtn);
 	menu->addChild(openBtn);
 	menu->addChild(closeBtn);
+	menu->addChild(openXmlBtn);
 	addChild(menu);
 }
 
@@ -98,8 +101,10 @@ CCMenuItemSprite *UiEditorBtnsPanel::getBtnWithLabel(const char* str, SEL_MenuHa
 {
 	CCNode* sItem = getBtnSprite(str);
 	CCNode* sSelItem = getBtnSprite(str);
-	sSelItem->setScale(1.1f);
+	float scale = 1.1f;
+	sSelItem->setScale(scale);
 	CCMenuItemSprite* menuItem = CCMenuItemSprite::create(sItem, sSelItem, this, selector);
+	sSelItem->setAnchorPoint(ccp((scale - 1.0f) * 0.5f, (scale - 1.0f) * 0.5f));
 	return menuItem;
 }
 
@@ -152,11 +157,20 @@ void UiEditorBtnsPanel::onOpenBtnClicked(cocos2d::CCObject* pSender)
 
 	if (::GetOpenFileNameA(&ofn))
 	{
-		UiWidgetsManager::theMgr()->loadXmlFile(szFile);
+		UiWidgetsManager::theMgr()->openNewLayout(szFile);
 	}
 }
 
 void UiEditorBtnsPanel::onCloseBtnClicked(cocos2d::CCObject* pSender)
 {
 	UiWidgetsManager::theMgr()->closeCurLayout();
+}
+
+void UiEditorBtnsPanel::onShowXmlBtnClicked(cocos2d::CCObject* pSender)
+{
+	auto fullPath = UiWidgetsManager::theMgr()->getCurFileName();
+	if (!fullPath.empty())
+	{
+		system(fullPath.c_str());
+	}
 }

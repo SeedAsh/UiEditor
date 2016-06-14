@@ -12,7 +12,7 @@ class UiEditorPanel
 public:
     CREATE_FUNC(UiEditorPanel);
 private:
-	virtual void newLayout(cocos2d::CCSize size);
+	virtual void newLayout(cocos2d::CCSize &size);
 	virtual void closeLayout();
 	virtual void update(float dt);
 private:

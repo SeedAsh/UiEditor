@@ -16,7 +16,7 @@ class UiWidgetNode;
 
 struct IUiWidgetView
 {
-	virtual void newLayout(cocos2d::CCSize size){}
+	virtual void newLayout(cocos2d::CCSize &size){}
 	virtual void addNewWidget(UiWidgetNode *node){}
 	virtual void nodeSelected(UiWidgetNode *node){}
 	virtual void save(std::string &filePath){}
@@ -29,8 +29,10 @@ class UiWidgetsManager
 public:
 	static UiWidgetsManager *theMgr();
 	~UiWidgetsManager(){}
+	void openNewLayout(std::string path);
 	void save();
 	void refresh();
+
 	void nodeSelected(UiWidgetNode *node);
 	void addView(IUiWidgetView *view);
 	void removeView(IUiWidgetView *view);
@@ -40,6 +42,8 @@ public:
     void init();
 	int getWidgetId(int id);
 	void closeCurLayout();
+
+	std::string getCurFileName(){ return m_xmlPath; }
 private:
 	UiWidgetsManager() :m_maxWidgetId(0){}
     void registerWidget(std::string name, std::function<UiWidgetNode *(rapidxml::xml_node<>*)> creater);

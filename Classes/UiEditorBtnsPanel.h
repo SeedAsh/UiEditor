@@ -25,6 +25,8 @@ private:
 	void onSaveBtnClicked(cocos2d::CCObject* pSender);
 	void onOpenBtnClicked(cocos2d::CCObject* pSender);
 	void onCloseBtnClicked(cocos2d::CCObject* pSender);
+	void onShowXmlBtnClicked(cocos2d::CCObject* pSender);
+
 };
 
 #endif 

@@ -42,6 +42,12 @@ void UiWidgetsManager::closeCurLayout()
 	m_xmlPath.clear();
 }
 
+void UiWidgetsManager::openNewLayout(string path)
+{
+	m_maxWidgetId = 0;
+	loadXmlFile(path);
+}
+
 void UiWidgetsManager::save()
 {
 	NOTIFY_VIEWS(save, m_xmlPath);
@@ -90,7 +96,8 @@ void UiWidgetsManager::loadXmlFile(string path)
 void UiWidgetsManager::createWidgetByName(const char *name)
 {
 	//rapidxml 的路径和cocos的搜索路径不共享
-	const string defaultPath = "../assets/default.xml";
+	auto defaultPath = CCFileUtils::sharedFileUtils()->fullPathForFilename("../assets/default.xml");
+	//const string defaultPath = "../assets/default.xml";
 	file<> fdoc(defaultPath.c_str());
 	xml_document<> doc;
 	doc.parse<0>(fdoc.data());
@@ -179,6 +186,6 @@ int UiWidgetsManager::getWidgetId(int id)
 	}
 	else
 	{
-		return m_maxWidgetId;
+		return id;
 	}
 }

@@ -64,7 +64,7 @@ void UiEditorPanel::drawFrame()
 	drawNode->setPosition(offset);
 }
 
-void UiEditorPanel::newLayout(CCSize size)
+void UiEditorPanel::newLayout(CCSize &size)
 {
 	removeCurLayout();
 	m_curLayout = UiEditorLayoutPanel::create(size);
