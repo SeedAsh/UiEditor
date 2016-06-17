@@ -53,6 +53,7 @@ private:
     UiWidgetNode *createEmptyBox(rapidxml::xml_node<> *node);
     
 	bool checkXml(rapidxml::xml_node<> *layout);
+	bool isFilesExit(int id, std::vector<std::string > &files);
 private:
 	std::vector<IUiWidgetView *> m_views;
     std::unordered_map<std::string, std::function<UiWidgetNode *(rapidxml::xml_node<>*)> > m_creaters;

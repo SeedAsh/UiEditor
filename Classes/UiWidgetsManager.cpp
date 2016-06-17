@@ -68,8 +68,6 @@ void UiWidgetsManager::loadXmlFile(string path)
 {
 	if (path.empty()) return;
 
-	m_xmlPath = path;
-
     file<> fdoc(path.c_str());
     std::cout<<fdoc.data()<<std::endl;
     xml_document<> doc;
@@ -77,6 +75,8 @@ void UiWidgetsManager::loadXmlFile(string path)
     
     xml_node<> *layout = doc.first_node();
 	if (!checkXml(layout)) return;
+	m_xmlPath = path;
+
 	CCSize size;
 	size.width = atof(layout->first_attribute("width")->value());
 	size.height = atof(layout->first_attribute("height")->value());
@@ -136,6 +136,7 @@ bool UiWidgetsManager::checkXml(rapidxml::xml_node<> *layout)
 	vector<int> ids;
 	for (auto node = layout->first_node(); node != NULL; node = node->next_sibling())
 	{
+		//检查是否有相同id
 		int id = atoi(node->first_node("id")->value());
 		auto iter = find(ids.begin(), ids.end(), id);
 		if (iter == ids.end())
@@ -146,6 +147,48 @@ bool UiWidgetsManager::checkXml(rapidxml::xml_node<> *layout)
 		{
 			char str[100] = { 0 };
 			sprintf(str, "save id = %d", id);
+			CCMessageBox(str, "error!!");
+			return false;
+		}
+
+		string widgetName = node->name();
+		vector<string> files;
+		bool fileExit = true;
+		if (widgetName == "image")
+		{
+			string path = node->first_node("path")->value();
+			files.push_back(path);
+			fileExit = isFilesExit(id, files);
+			
+		}
+		else if (widgetName == "button")
+		{
+			string path;
+			path = node->first_node("normal")->value();
+			files.push_back(path);
+			path = node->first_node("selected")->value();
+			files.push_back(path);
+			path = node->first_node("disabled")->value();
+			files.push_back(path);
+			fileExit = isFilesExit(id, files);
+		}
+		if (!fileExit) return false;
+	}
+	return true;
+}
+
+bool UiWidgetsManager::isFilesExit(int id, vector<string> &files)
+{
+	for (auto iter = files.begin(); iter != files.end(); ++iter)
+	{
+		//直接用相对路径 在外部exe出错
+		string path = "../Resources/";
+		path += *iter;
+		auto fullPath = CCFileUtils::sharedFileUtils()->fullPathForFilename(path.c_str());
+		if (!CCFileUtils::sharedFileUtils()->isFileExist(fullPath))
+		{
+			char str[100] = { 0 };
+			sprintf(str, "id = %d, not found file \"%s\"", id, (*iter).c_str());
 			CCMessageBox(str, "error!!");
 			return false;
 		}
