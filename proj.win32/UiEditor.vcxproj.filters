@@ -78,6 +78,9 @@
     <ClCompile Include="..\Classes\util.cpp">
       <Filter>Util</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\UiWidgetImageNum.cpp">
+      <Filter>Widgets</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -145,6 +148,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\util.h">
       <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UiWidgetImageNum.h">
+      <Filter>Widgets</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

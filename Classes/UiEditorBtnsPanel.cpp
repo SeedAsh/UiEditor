@@ -35,12 +35,15 @@ void UiEditorBtnsPanel::initWidgetsBtn()
 	labelBtn->setPosition(ccp(-winsize.width * 0.45f, winsize.height * 0.25f));
 	CCMenuItemSprite* emptyBoxBtn = getBtnWithLabel("emptyBox", menu_selector(UiEditorBtnsPanel::onEmptyBoxBtnClicked));
 	emptyBoxBtn->setPosition(ccp(-winsize.width * 0.45f, winsize.height * 0.15f));
+	CCMenuItemSprite* imageNumBtn = getBtnWithLabel("imageNum", menu_selector(UiEditorBtnsPanel::onImageNumBtnClicked));
+	imageNumBtn->setPosition(ccp(-winsize.width * 0.45f, winsize.height * 0.05f));
 
 	CCMenu *menu = CCMenu::create();
 	menu->addChild(imageBtn);
 	menu->addChild(buttonBtn);
 	menu->addChild(labelBtn);
 	menu->addChild(emptyBoxBtn);
+	menu->addChild(imageNumBtn);
 	addChild(menu);
 }
 
@@ -126,6 +129,11 @@ void UiEditorBtnsPanel::onImageBtnClicked(cocos2d::CCObject* pSender)
 void UiEditorBtnsPanel::onEmptyBoxBtnClicked(cocos2d::CCObject* pSender)
 {
 	UiWidgetsManager::theMgr()->createWidgetByName("emptyBox");
+}
+
+void UiEditorBtnsPanel::onImageNumBtnClicked(cocos2d::CCObject* pSender)
+{
+	UiWidgetsManager::theMgr()->createWidgetByName("imageNum");
 }
 
 void UiEditorBtnsPanel::onUpdateBtnClicked(cocos2d::CCObject* pSender)

@@ -144,6 +144,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="..\Classes\UiEditorBtnsPanel.cpp" />
     <ClCompile Include="..\Classes\UiWidgetButton.cpp" />
     <ClCompile Include="..\Classes\UiWidgetImage.cpp" />
+    <ClCompile Include="..\Classes\UiWidgetImageNum.cpp" />
     <ClCompile Include="..\Classes\UiWidgetsManager.cpp" />
     <ClCompile Include="..\Classes\UiWidgetLabel.cpp" />
     <ClCompile Include="..\Classes\UiWidgetNode.cpp" />
@@ -168,6 +169,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\Classes\UiEditorBtnsPanel.h" />
     <ClInclude Include="..\Classes\UiWidgetButton.h" />
     <ClInclude Include="..\Classes\UiWidgetImage.h" />
+    <ClInclude Include="..\Classes\UiWidgetImageNum.h" />
     <ClInclude Include="..\Classes\UiWidgetsManager.h" />
     <ClInclude Include="..\Classes\UiWidgetLabel.h" />
     <ClInclude Include="..\Classes\UiWidgetNode.h" />

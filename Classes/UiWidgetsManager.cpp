@@ -6,6 +6,7 @@
 #include "rapidxml/rapidxml_utils.hpp"
 #include "rapidxml/rapidxml_print.hpp"
 #include <algorithm>
+#include "UiWidgetImageNum.h"
 USING_NS_CC;
 using namespace std;
 using namespace std::placeholders;
@@ -128,7 +129,8 @@ void UiWidgetsManager::init()
     registerWidget("button", bind(&UiWidgetsManager::createButton, this, _1));
     registerWidget("label", bind(&UiWidgetsManager::createLabel, this, _1));
     registerWidget("image", bind(&UiWidgetsManager::createImage, this, _1));
-    registerWidget("emptyBox", bind(&UiWidgetsManager::createEmptyBox, this, _1));
+	registerWidget("emptyBox", bind(&UiWidgetsManager::createEmptyBox, this, _1));
+	registerWidget("imageNum", bind(&UiWidgetsManager::createImageNum, this, _1));
 }
 
 bool UiWidgetsManager::checkXml(rapidxml::xml_node<> *layout)
@@ -169,6 +171,12 @@ bool UiWidgetsManager::checkXml(rapidxml::xml_node<> *layout)
 			path = node->first_node("selected")->value();
 			files.push_back(path);
 			path = node->first_node("disabled")->value();
+			files.push_back(path);
+			fileExit = isFilesExit(id, files);
+		}
+		else if (widgetName == "imageNum")
+		{
+			string path = node->first_node("path")->value();
 			files.push_back(path);
 			fileExit = isFilesExit(id, files);
 		}
@@ -214,6 +222,11 @@ UiWidgetNode *UiWidgetsManager::createImage(xml_node<> *node)
 UiWidgetNode *UiWidgetsManager::createEmptyBox(xml_node<> *node)
 {
     return UiWidgetEmptyBox::create(node);
+}
+
+UiWidgetNode *UiWidgetsManager::createImageNum(xml_node<> *node)
+{
+	return UiWidgetImageNum::create(node);
 }
 
 int UiWidgetsManager::getWidgetId(int id)

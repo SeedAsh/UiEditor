@@ -25,5 +25,13 @@
         <x>0</x>
         <y>0</y>
     </emptyBox>
+	<imageNum>
+        <id>0</id>
+        <x>0</x>
+        <y>0</y>
+		<num>1234</num>
+		<path>numbers.png</path>
+		<amount>10</amount>
+    </imageNum>
 </layout>
 

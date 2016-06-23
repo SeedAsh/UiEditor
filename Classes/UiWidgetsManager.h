@@ -50,7 +50,8 @@ private:
     UiWidgetNode *createButton(rapidxml::xml_node<> *node);
     UiWidgetNode *createLabel(rapidxml::xml_node<> *node);
     UiWidgetNode *createImage(rapidxml::xml_node<> *node);
-    UiWidgetNode *createEmptyBox(rapidxml::xml_node<> *node);
+	UiWidgetNode *createEmptyBox(rapidxml::xml_node<> *node);
+	UiWidgetNode *createImageNum(rapidxml::xml_node<> *node);
     
 	bool checkXml(rapidxml::xml_node<> *layout);
 	bool isFilesExit(int id, std::vector<std::string > &files);

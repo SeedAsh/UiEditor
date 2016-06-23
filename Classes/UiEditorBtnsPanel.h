@@ -19,6 +19,7 @@ private:
 	void onImageBtnClicked(cocos2d::CCObject* pSender);
 	void onLabelBtnClicked(cocos2d::CCObject* pSender);
 	void onEmptyBoxBtnClicked(cocos2d::CCObject* pSender);
+	void onImageNumBtnClicked(cocos2d::CCObject* pSender);
 private:
 	void initFuncsBtn();
 	void onUpdateBtnClicked(cocos2d::CCObject* pSender);
