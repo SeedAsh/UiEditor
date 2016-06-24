@@ -3,12 +3,18 @@
 		<id>0</id>
 		<x>0</x>
 		<y>0</y>
+			<anchorPtX>0.50</anchorPtX>
+		<anchorPtY>0.50</anchorPtY>
+		<scale>1.00</scale>
 		<path>loginBg.png</path>
 	</image>
 	<label>
 		<id>0</id>
 		<x>0</x>
 		<y>0</y>
+			<anchorPtX>0.50</anchorPtX>
+		<anchorPtY>0.50</anchorPtY>
+		<scale>1.00</scale>
 		<text>hello hey</text>
 	</label>
 
@@ -16,6 +22,9 @@
 		<id>0</id>
 		<x>0</x>
 		<y>0</y>
+			<anchorPtX>0.50</anchorPtX>
+		<anchorPtY>0.50</anchorPtY>
+		<scale>1.00</scale>
 		<normal>menu_money.png</normal>
 		<selected>menu_money.png</selected>
 		<disabled>menu_money.png</disabled>
@@ -24,14 +33,30 @@
         <id>0</id>
         <x>0</x>
         <y>0</y>
+			<anchorPtX>0.50</anchorPtX>
+		<anchorPtY>0.50</anchorPtY>
+		<scale>1.00</scale>
     </emptyBox>
 	<imageNum>
         <id>0</id>
         <x>0</x>
         <y>0</y>
+			<anchorPtX>0.50</anchorPtX>
+		<anchorPtY>0.50</anchorPtY>
+		<scale>1.00</scale>
 		<num>1234</num>
 		<path>numbers.png</path>
 		<amount>10</amount>
     </imageNum>
+	<animation>
+		<id>0</id>
+		<x>0</x>
+		<y>0</y>
+			<anchorPtX>0.50</anchorPtX>
+		<anchorPtY>0.50</anchorPtY>
+		<scale>0.50</scale>
+		<path>Cowboy.ExportJson</path>
+		<movement>0</movement>
+	</animation>
 </layout>
 

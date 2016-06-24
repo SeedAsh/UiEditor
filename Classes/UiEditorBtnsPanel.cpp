@@ -37,6 +37,8 @@ void UiEditorBtnsPanel::initWidgetsBtn()
 	emptyBoxBtn->setPosition(ccp(-winsize.width * 0.45f, winsize.height * 0.15f));
 	CCMenuItemSprite* imageNumBtn = getBtnWithLabel("imageNum", menu_selector(UiEditorBtnsPanel::onImageNumBtnClicked));
 	imageNumBtn->setPosition(ccp(-winsize.width * 0.45f, winsize.height * 0.05f));
+	CCMenuItemSprite* animationBtn = getBtnWithLabel("animation", menu_selector(UiEditorBtnsPanel::onAnimationBtnClicked));
+	animationBtn->setPosition(ccp(-winsize.width * 0.45f, winsize.height * -0.05f));
 
 	CCMenu *menu = CCMenu::create();
 	menu->addChild(imageBtn);
@@ -44,6 +46,7 @@ void UiEditorBtnsPanel::initWidgetsBtn()
 	menu->addChild(labelBtn);
 	menu->addChild(emptyBoxBtn);
 	menu->addChild(imageNumBtn);
+	menu->addChild(animationBtn);
 	addChild(menu);
 }
 
@@ -134,6 +137,11 @@ void UiEditorBtnsPanel::onEmptyBoxBtnClicked(cocos2d::CCObject* pSender)
 void UiEditorBtnsPanel::onImageNumBtnClicked(cocos2d::CCObject* pSender)
 {
 	UiWidgetsManager::theMgr()->createWidgetByName("imageNum");
+}
+
+void UiEditorBtnsPanel::onAnimationBtnClicked(cocos2d::CCObject* pSender)
+{
+	UiWidgetsManager::theMgr()->createWidgetByName("animation");
 }
 
 void UiEditorBtnsPanel::onUpdateBtnClicked(cocos2d::CCObject* pSender)

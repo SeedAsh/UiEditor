@@ -7,6 +7,7 @@
 #include "rapidxml/rapidxml_print.hpp"
 #include <algorithm>
 #include "UiWidgetImageNum.h"
+#include "UiWidgetAnimation.h"
 USING_NS_CC;
 using namespace std;
 using namespace std::placeholders;
@@ -131,6 +132,7 @@ void UiWidgetsManager::init()
     registerWidget("image", bind(&UiWidgetsManager::createImage, this, _1));
 	registerWidget("emptyBox", bind(&UiWidgetsManager::createEmptyBox, this, _1));
 	registerWidget("imageNum", bind(&UiWidgetsManager::createImageNum, this, _1));
+	registerWidget("animation", bind(&UiWidgetsManager::createAnimation, this, _1));
 }
 
 bool UiWidgetsManager::checkXml(rapidxml::xml_node<> *layout)
@@ -175,6 +177,12 @@ bool UiWidgetsManager::checkXml(rapidxml::xml_node<> *layout)
 			fileExit = isFilesExit(id, files);
 		}
 		else if (widgetName == "imageNum")
+		{
+			string path = node->first_node("path")->value();
+			files.push_back(path);
+			fileExit = isFilesExit(id, files);
+		}
+		else if (widgetName == "animation")
 		{
 			string path = node->first_node("path")->value();
 			files.push_back(path);
@@ -227,6 +235,11 @@ UiWidgetNode *UiWidgetsManager::createEmptyBox(xml_node<> *node)
 UiWidgetNode *UiWidgetsManager::createImageNum(xml_node<> *node)
 {
 	return UiWidgetImageNum::create(node);
+}
+
+UiWidgetNode *UiWidgetsManager::createAnimation(xml_node<> *node)
+{
+	return UiWidgetAnimation::create(node);
 }
 
 int UiWidgetsManager::getWidgetId(int id)

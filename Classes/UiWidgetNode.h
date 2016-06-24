@@ -20,6 +20,7 @@ public:
 	virtual bool init();
 public:
 	virtual void save(rapidxml::xml_document<> &doc, rapidxml::xml_node<> *node){}
+	virtual std::vector<std::string> selectedPrint(){ return std::vector<std::string>(); }
 	void callIdTipsToggle();
 protected:
 	UiWidgetNode(int touchPriority = 0);

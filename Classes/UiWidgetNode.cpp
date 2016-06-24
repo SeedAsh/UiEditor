@@ -61,7 +61,7 @@ void UiWidgetNode::drawFrame()
 	CCPoint rightTop(size.width, size.height);
 
 	CCDrawNode *drawNode = CCDrawNode::create();
-	addChild(drawNode);
+	addChild(drawNode, 1);
 
 	drawNode->drawSegment(leftBottom, rightBottom, 0.5f, ccc4f(0.5f, 0.5f, 0.5f, 1));
 	drawNode->drawSegment(rightBottom, rightTop, 0.5f, ccc4f(0.5f, 0.5f, 0.5f, 1));
@@ -75,8 +75,12 @@ void UiWidgetNode::initBaseInfo(rapidxml::xml_node<> *node)
 	m_id = UiWidgetsManager::theMgr()->getWidgetId(id);
     float x = atof(node->first_node("x")->value());
     float y = atof(node->first_node("y")->value());
+	float anchorPtX = atof(node->first_node("x")->value());
+	float anchorPtY = atof(node->first_node("y")->value());
+	float scale = atof(node->first_node("scale")->value());
     setPosition(ccp(x, y));
 	setAnchorPoint(ccp(0.5f, 0.5f));
+	setScale(scale);
 }
 
 void UiWidgetNode::saveBaseInfo(rapidxml::xml_document<> &doc, rapidxml::xml_node<> *node)
@@ -91,6 +95,15 @@ void UiWidgetNode::saveBaseInfo(rapidxml::xml_document<> &doc, rapidxml::xml_nod
 
 	sprintf(str, "%.02f", getPositionY());
 	node->append_node(doc.allocate_node(node_element, "y", doc.allocate_string(str)));
+	
+	sprintf(str, "%.02f", getAnchorPoint().x);
+	node->append_node(doc.allocate_node(node_element, "anchorPtX", doc.allocate_string(str)));
+
+	sprintf(str, "%.02f", getAnchorPoint().y);
+	node->append_node(doc.allocate_node(node_element, "anchorPtY", doc.allocate_string(str)));
+
+	sprintf(str, "%.02f", getScale());
+	node->append_node(doc.allocate_node(node_element, "scale", doc.allocate_string(str)));
 }
 
 CCNode *UiWidgetNode::getIdTips()

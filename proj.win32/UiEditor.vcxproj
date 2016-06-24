@@ -136,6 +136,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="..\Classes\EmptyBox.cpp" />
     <ClCompile Include="..\Classes\MainScene.cpp" />
     <ClCompile Include="..\Classes\UIEditorKeyboardListener.cpp" />
+    <ClCompile Include="..\Classes\UiWidgetAnimation.cpp" />
     <ClCompile Include="..\Classes\UiWidgetEmptyBox.cpp" />
     <ClCompile Include="..\Classes\UiEditorLayoutPanel.cpp" />
     <ClCompile Include="..\Classes\UiEditorManager.cpp" />
@@ -161,6 +162,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\Classes\rapidxml\rapidxml_print.hpp" />
     <ClInclude Include="..\Classes\rapidxml\rapidxml_utils.hpp" />
     <ClInclude Include="..\Classes\UIEditorKeyboardListener.h" />
+    <ClInclude Include="..\Classes\UiWidgetAnimation.h" />
     <ClInclude Include="..\Classes\UiWidgetEmptyBox.h" />
     <ClInclude Include="..\Classes\UiEditorLayoutPanel.h" />
     <ClInclude Include="..\Classes\UiEditorManager.h" />
