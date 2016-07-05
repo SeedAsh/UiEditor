@@ -6,7 +6,7 @@
 			<anchorPtX>0.50</anchorPtX>
 		<anchorPtY>0.50</anchorPtY>
 		<scale>1.00</scale>
-		<path>loginBg.png</path>
+		<path>ui/pic.png</path>
 	</image>
 	<label>
 		<id>0</id>
@@ -25,27 +25,27 @@
 			<anchorPtX>0.50</anchorPtX>
 		<anchorPtY>0.50</anchorPtY>
 		<scale>1.00</scale>
-		<normal>menu_money.png</normal>
-		<selected>menu_money.png</selected>
-		<disabled>menu_money.png</disabled>
+		<normal>ui/btn.png</normal>
+		<selected>ui/btn.png</selected>
+		<disabled>ui/btn.png</disabled>
 	</button>
     <emptyBox>
         <id>0</id>
         <x>0</x>
         <y>0</y>
-			<anchorPtX>0.50</anchorPtX>
-		<anchorPtY>0.50</anchorPtY>
+			<anchorPtX>0</anchorPtX>
+		<anchorPtY>0</anchorPtY>
 		<scale>1.00</scale>
     </emptyBox>
 	<imageNum>
         <id>0</id>
         <x>0</x>
         <y>0</y>
-			<anchorPtX>0.50</anchorPtX>
-		<anchorPtY>0.50</anchorPtY>
+			<anchorPtX>0</anchorPtX>
+		<anchorPtY>0</anchorPtY>
 		<scale>1.00</scale>
-		<num>1234</num>
-		<path>numbers.png</path>
+		<num>10</num>
+		<path>ui/numbers.png</path>
 		<amount>10</amount>
     </imageNum>
 	<animation>
@@ -55,7 +55,7 @@
 			<anchorPtX>0.50</anchorPtX>
 		<anchorPtY>0.50</anchorPtY>
 		<scale>0.50</scale>
-		<path>Cowboy.ExportJson</path>
+		<path>animation/Cowboy.ExportJson</path>
 		<movement>0</movement>
 	</animation>
 </layout>

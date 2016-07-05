@@ -87,7 +87,7 @@ void UiEditorBtnsPanel::initFuncsBtn()
 
 static CCNode *getBtnSprite(const char *str)
 {
-	const char* path = "btn.png";
+	const char* path = "ui/btn.png";
 	CCNode *node = CCNode::create();
 	auto spr = CCSprite::create(path);
 	auto size = spr->getContentSize();

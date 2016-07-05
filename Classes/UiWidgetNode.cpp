@@ -75,11 +75,11 @@ void UiWidgetNode::initBaseInfo(rapidxml::xml_node<> *node)
 	m_id = UiWidgetsManager::theMgr()->getWidgetId(id);
     float x = atof(node->first_node("x")->value());
     float y = atof(node->first_node("y")->value());
-	float anchorPtX = atof(node->first_node("x")->value());
-	float anchorPtY = atof(node->first_node("y")->value());
+	float anchorPtX = atof(node->first_node("anchorPtX")->value());
+	float anchorPtY = atof(node->first_node("anchorPtY")->value());
 	float scale = atof(node->first_node("scale")->value());
     setPosition(ccp(x, y));
-	setAnchorPoint(ccp(0.5f, 0.5f));
+	setAnchorPoint(ccp(anchorPtX, anchorPtY));
 	setScale(scale);
 }
 

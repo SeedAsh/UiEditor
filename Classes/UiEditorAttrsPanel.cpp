@@ -6,7 +6,7 @@ bool AttrPrintPad::init()
 {
 	auto winSize = CCDirector::sharedDirector()->getWinSize();
 
-	CCSprite *padSpr = CCSprite::create("pad.png");
+	CCSprite *padSpr = CCSprite::create("ui/pad.png");
 	padSpr->setAnchorPoint(ccp(0, 0));
 	padSpr->setScaleX(0.5f);
 	padSpr->setScaleY(1.5f);

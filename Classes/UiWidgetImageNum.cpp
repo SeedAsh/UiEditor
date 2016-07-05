@@ -14,7 +14,6 @@ UiWidgetImageNum *UiWidgetImageNum::create(rapidxml::xml_node<>* node)
 UiWidgetImageNum::UiWidgetImageNum(rapidxml::xml_node<>* node)
 {
 	initBaseInfo(node);
-	setAnchorPoint(ccp(0, 0));
 
 	m_str = node->first_node("num")->value();
 	m_imgNumPath = node->first_node("path")->value();
